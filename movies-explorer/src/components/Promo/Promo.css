@@ -1,0 +1,32 @@
+.promo{
+  background-image: url(../../images/landing-logo.svg)!important;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+
+}
+
+.promo__box {
+  width: 1280px;
+  background-color: #073042;
+}
+
+.promo__text{
+  width: 626px;
+  height: 104px;
+  margin: 50px 0 0 70px ;
+  padding: 0;
+  font-family: "Inter", 'Helvetica Neue', Arial, sans-serif;
+  font-size: 40px;
+  line-height: 52px;
+  font-weight: 400;
+}
+.landing-logo{
+  margin: 102px 0 60px 488px;
+  height: 244px;
+  width: 722px;
+  justify-self: start;
+  justify-content: flex-start;
+}

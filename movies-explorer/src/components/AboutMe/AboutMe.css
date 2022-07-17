@@ -1,0 +1,31 @@
+.section-me{
+  color: white;
+  font-family: "Inter", 'Helvetica Neue', Arial, sans-serif;
+  font-size: 18px;
+  line-height: 21.78px;
+  font-weight: 400;
+  background-color: #202020;
+}
+.section-me__header{
+  padding: 110px 0 0 70px;
+  border-bottom: 1px solid;
+}
+.section-me__about{
+  display: flex;
+  justify-content: center;
+}
+.section-me__student{
+  width: 600px;
+}
+.section-me__name{}
+.section-me__profession{}
+.section-me__describe{}
+.section-me__contacts{
+  display: flex;
+}
+.section-me__contacts-fb{}
+.section-me__contacts-gh{}
+.section-me__avatar{
+  height: 327px;
+  width: 270px;
+}

@@ -1,0 +1,30 @@
+.portfolio{
+  background-color: #202020;
+  text-align: center;
+  color: white;
+}
+.portfolio__head{}
+
+.portfolio__describe{
+  color: white;
+  text-align: center;
+  font-family: "Inter", 'Helvetica Neue', Arial, sans-serif;
+  font-size: 30px;
+  line-height: 50px;
+  font-weight: 400;
+  border-bottom: 1px solid;
+
+}
+.portfolio__box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 200px 0 200px;
+
+}
+
+.portfolio__symbol{
+  width: 29px;
+  height: 60px;
+
+}

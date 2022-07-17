@@ -1,0 +1,28 @@
+.technology{
+  background-color: #272727;
+  color: white;
+  text-align: center;
+}
+.technology__head{
+  border-bottom: 1px solid;
+  padding: 110px 0 0 70px;
+}
+.technology__about {
+}
+.technology__text {
+}
+.technology__box {
+  display: flex;
+  justify-content: center;
+
+}
+.technology__section{
+  width: 90px;
+  height: 60px;
+  background-color: #303030;
+  margin: 0 5px 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px ;
+}

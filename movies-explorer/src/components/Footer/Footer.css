@@ -1,0 +1,40 @@
+.footer {
+  font-family: "Inter", 'Helvetica Neue', Arial, sans-serif;
+  font-size: 18px;
+  line-height: 21.78px;
+  font-weight: 400;
+  color: white;
+  background-color: #202020;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+  .footer__about{
+    font-size: 13px;
+    line-height: 15.73px;
+    color: #8B8B8B;
+ }
+
+.footer__box{
+  display: flex;
+
+}
+.footer__year{
+  display: flex;
+
+}
+.footer__links{
+
+display: flex;
+}
+.footer__link{
+  display: flex;
+}
+
+@media screen and (max-width: 920px) {
+
+  .footer {
+    width: 320px;
+
+  }
+}
