@@ -7,7 +7,10 @@ import Main from "../Main/Main";
 import Movies from "../Movies/Movies";
 import Promo from "../Promo/Promo";
 import React from "react";
-
+import SearchForm from "../SearchForm/SearchForm";
+import Register from "../Register/Register";
+import Login from "../Login/Login";
+import Error404 from "../404/404";
 
 
 function App() {
@@ -15,23 +18,22 @@ function App() {
     <div className="page">
       <div className="head">
       <Header/>
-
         </div>
-
       <Switch>
         <Route path="/signin" >
-          <div className="loginContainer">
-          </div>
+          <Login/>
         </Route>
-        <Route path="/signup">
-          <div className="RegisterContainer">
-           000
-          </div>
+        <Route path="/signup" >
+          <Register/>
         </Route>
         <Route path="/movies">
+          <SearchForm/>
           <Movies/>
         </Route>
         <Route path="/profile">
+        </Route>
+        <Route path="/404" >
+        <Error404/>
         </Route>
         <Route path="/" >
           <Promo/>

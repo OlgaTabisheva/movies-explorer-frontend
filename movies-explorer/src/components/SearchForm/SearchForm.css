@@ -1,0 +1,38 @@
+.seatch{
+  color: white;
+
+  text-align: center;
+  font-family: "Inter", 'Helvetica Neue', Arial, sans-serif;
+  font-size: 25px;
+  line-height: 30x;
+  font-weight: 400;
+  border-bottom: 1px solid;
+}
+.search__input{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around
+}
+.search__film-box{
+display: flex;
+  align-items: center;
+}
+.movies__search-img{
+
+}
+.search__film-name{
+
+}
+.search__section{
+display: flex;
+  align-items: center;
+}
+.search__find{
+
+}
+.search__smalltumb{
+
+}
+.search__long{
+
+}
