@@ -1,10 +1,22 @@
 .portfolio{
   background-color: #202020;
-  text-align: center;
   color: white;
-  width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 101px 0 125px 70px;
 }
-.portfolio__head{}
+.portfolio__line{
+  margin:19px 0 20px 0;
+  color: #424242;
+  width: 1140px;
+}
+.portfolio__head{
+  margin: 0 0 50px 0;
+  font-size: 18px;
+  line-height: 20px;
+  color: #8B8B8B;
+}
 
 .portfolio__describe{
   color: white;
@@ -13,19 +25,21 @@
   font-size: 30px;
   line-height: 50px;
   font-weight: 400;
-  border-bottom: 1px solid;
+  margin: 0 ;
+  letter-spacing: -0.04em;
 
 }
 .portfolio__box{
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin: 0 200px 0 200px;
-
+  margin: 0 ;
+  align-items: baseline;
+  width: 1140px;
+  padding: 0;
 }
 
 .portfolio__symbol{
   width: 29px;
-  height: 60px;
+  margin:0 70px 0 0;
 
 }

@@ -4,7 +4,11 @@ import React from 'react';
 function Techs() {
   return (
     <techs className="technology">
+      <div className="technology__head-box">
       <h3 className="technology__head"> Технологии</h3>
+      <div className="line technology__line">
+      </div>
+      </div>
       <h2 className="technology__about">7 технологий</h2>
       <p className="technology__text">На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</p>
       <div className="technology__box">

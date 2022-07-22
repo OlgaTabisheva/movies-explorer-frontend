@@ -5,6 +5,9 @@ function AboutProject() {
   return (
     <aboutproject className="nav">
       <h2 className="nav__about">О проекте</h2>
+      <div className="line">
+
+      </div>
       <div className="nav__container">
         <div className="nav__column">
           <h3 className="nav__head">Дипломный проект включал 5 этапов</h3>
@@ -12,17 +15,17 @@ function AboutProject() {
         </div>
         <div className="nav__column">
           <h3 className="nav__head">На выполнение диплома ушло 5 недель</h3>
-          <p className="nav__text">У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</p>
+          <p className="nav__text ">У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</p>
         </div>
       </div>
       <div className="nav__limit-container">
         <div className="nav__limit">
           <p className="nav__time-back">1 неделя</p>
-          <p className="nav__description">backend</p>
+          <p className="nav__description">Back-end</p>
         </div>
         <div className="nav__limit">
           <p className="nav__time-front">4 недели</p>
-          <p className="nav__description">frontend</p>
+          <p className="nav__description">Front-end</p>
         </div>
       </div>
     </aboutproject>

@@ -18,11 +18,16 @@ function Header(props) {
             <Link className='header__link' to='/signin'>Войти</Link>
           </Route>
           <Route path='/signup'>
+
             <Link className='header__link' to='/signup'>Регистрация</Link>
+
           </Route>
           <Route path='*'>
+
             <Link className='header__link' to='/signup'>Регистрация</Link>
+            <div className="header__link-box">
             <Link className='header__link' >Войти</Link>
+            </div>
           </Route>
         </Switch>
       </nav>

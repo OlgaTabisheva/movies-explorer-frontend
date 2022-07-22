@@ -6,6 +6,9 @@ function AboutMe() {
   return (
     <div className="section-me">
       <h3 className="section-me__header">Студент</h3>
+      <div className="line">
+
+      </div>
       <div className="section-me__about">
       <div className="section-me__student">
       <h2 className="section-me__name">Ольга</h2>
