@@ -51,17 +51,74 @@
   display: flex;
 }
 .section-me__contacts-fb{
+  text-decoration: none;
   font-size: 14px;
   line-height: 17px;
   margin: 0;
 }
+.section-me__contacts-fb:hover{
+  opacity: 0.5;
+}
 .section-me__contacts-gh{
+  text-decoration: none;
   font-size: 14px;
   line-height: 17px;
   margin: 0 0 0 20px;
+}
+.section-me__contacts-gh:hover{
+  opacity: 0.5;
 }
 .section-me__avatar{
   height: 327px;
   width: 270px;
   margin: 65px 0 0 0;
+}
+@media screen and (max-width: 1200px) {
+  .section-me__student{
+    width: 364px;
+  }
+  .section-me__header {
+    margin: 90px 0 0 0;
+  }
+}
+@media screen and (max-width: 800px) {
+  .section-me__about{
+    flex-direction: column-reverse;
+  }
+  .section-me__avatar{
+    height: 352px;
+    width: 292px;
+    margin: 0;
+  }
+  .section-me{
+
+    margin-left: 14px;
+  }
+  .section-me__name{
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -0.04em;
+  }
+  .section-me__profession{
+    margin: 20px 0 20px 0;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 16px;
+  }
+  .section-me__describe{
+    margin: 0 0 40px 0;
+    font-size: 11px;
+    line-height: 16px;
+    width: 292px;
+  }
+  .section-me__contacts-fb{
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .section-me__contacts-gh{
+    font-size: 14px;
+    line-height: 17px;
+  }
 }

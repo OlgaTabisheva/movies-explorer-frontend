@@ -18,8 +18,8 @@ function AboutMe() {
         Нравится собирать грибы и кататься на велосипеде, путешествовать. Люблю животных, дома имеется рыжий кот.
       </p>
       <div className="section-me__contacts">
-        <p className="section-me__contacts-fb">Facebook</p>
-        <p className="section-me__contacts-gh">Github</p>
+        <a href="https://ru-ru.facebook.com/" className="section-me__contacts-fb" >Facebook </a>
+        <a href="https://github.com/" className="section-me__contacts-gh" >Github </a>
       </div>
       </div>
       <img src={avatar} alt="Изображение аватара" className="section-me__avatar"/>

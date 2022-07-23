@@ -7,6 +7,7 @@
   color: white;
   width: 1280px;
 }
+
 .header {
   padding-top: 18px;
   margin: 0px 70px 0 70px;
@@ -14,47 +15,37 @@
   justify-content: space-between;
   align-items: center;
   height: 74px;
-
-
 }
 
 .header__logo{
-  margin: 0 70px 0 70px;
+  margin: 0;
   height: 38px;
   width: 38px;
   justify-self: start;
   justify-content: flex-start;
 }
 
-@media screen and (max-width: 920px) {
-
-  .header__logo {
-    height: 24px;
-    width: 103px;
-    margin-left: 27px;
-    margin-bottom: 31.6px;
-  }
-
-}
 .header__nav {
-  margin: 0 70px 0 70px;
+  margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   color: white;
-
 }
 
 .header__link{
-  margin-left: 15px;
+  margin-left: 20px;
   border: none;
   text-decoration: none;
-  border: none;
   color: black;
+  font-size: 12px;
+  line-height: 16px;
 }
+
 .header__link:last-child{
   color: black;
 }
+
 .header__link:hover{
   opacity: 0.5;
 }
@@ -69,13 +60,40 @@ a:visited{
   border-radius: 3px;
   Width :76px;
   Height: 32px;
-display: flex;
+  display: flex;
   align-items: center
 }
-@media screen and (max-width: 920px) {
 
+@media screen and (max-width: 1200px) {
+
+  .head {
+    width: 780px;
+
+  }
   .header {
-    margin-top: 28px;
+    margin: 0 50px 0 50px;
+
+  }
+
+  .header__logo {
+    margin: 0 70px 0 70px;
+
+  }
+
+}
+@media screen and (max-width: 800px) {
+
+  .head {
+    width: 320px;
+
+  }
+  .header {
+    margin: 18px 0 0 0;
     width: 320px;
   }
+  .header__logo {
+    margin: 0 0 0 14px;
+
+  }
 }
+

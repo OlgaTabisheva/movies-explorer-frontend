@@ -1,4 +1,5 @@
 import React from 'react';
+import {Redirect, Route, Switch, useHistory} from 'react-router-dom'
 
 function Footer() {
   return (
@@ -11,9 +12,12 @@ function Footer() {
       <p className="footer__year">© 2020</p>
 
       <div className="footer__links">
-      <p className="footer__link">Яндекс.Практикум</p>
-      <p className="footer__link">Github</p>
-      <p className="footer__link">Facebook</p>
+        <a href="https://practicum.yandex.ru/" className="footer__link" >
+          Яндекс.Практикум </a>
+        <a href="https://github.com/" className="footer__link" >
+          Github </a>
+        <a href="https://ru-ru.facebook.com/" className="footer__link" >
+          Facebook </a>
       </div>
       </div>
     </footer>

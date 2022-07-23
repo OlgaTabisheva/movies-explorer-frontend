@@ -2,13 +2,8 @@
   display: flex;
   color: white;
   background-color: #073042;
-  width: 1280px;
-
+ width: 1280px;
 }
-.promo__box {
-  background-color: #073042;
-}
-
 .promo__text{
   width: 626px;
   height: 104px;
@@ -17,7 +12,13 @@
   font-size: 40px;
   line-height: 52px;
   font-weight: 400;
+  text-align: left;
 }
+.promo__box {
+  background-color: #073042;
+}
+
+
 .landing-logo{
   padding: 102px 0 60px 488px;
   height: 244px;
@@ -25,3 +26,52 @@
   justify-self: start;
   justify-content: flex-start;
 }
+
+@media screen and (max-width: 1200px) {
+
+  .promo {
+width: 780px;
+  }
+  .landing-logo{
+    padding: 102px 0 60px 0px;
+    height: 230px;
+    width: 680px;
+
+  }
+  .promo__box {
+    width: 780px;
+  }
+  .promo__text{
+    width: 680px;
+    padding: 50px 0 0 50px ;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 800px) {
+
+  .promo {
+    width: 320px;
+  }
+  .landing-logo{
+    padding: 102px 0 60px 488px;
+    height: 230px;
+    width: 320px;
+
+  }
+  .promo__box {
+    width: 320px;
+  }
+  .promo__text{
+    width: 300px;
+    padding: 0 ;
+    text-align: center;
+    font-size: 31px;
+    line-height: 39px;
+    letter-spacing: -0.04em;
+    margin: 183px 10px 0 0;
+  }
+  .landing-logo{
+    padding:0;
+  }
+}
+
