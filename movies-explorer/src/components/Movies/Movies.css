@@ -3,8 +3,9 @@
   display: flex;
   flex-direction: column
 }
-.movies__card{}
-.movies__head{}
-.movies__name{}
-.movies__time{}
-.movies__img{}
+@media screen and (max-width: 800px) {
+  .movies {
+
+    width: 320px;
+  }
+}

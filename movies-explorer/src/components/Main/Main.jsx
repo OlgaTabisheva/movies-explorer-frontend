@@ -5,6 +5,7 @@ import AboutMe from "../AboutMe/AboutMe";
 import Portfolio from "../Portfolio/Portfolio";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import Promo from "../Promo/Promo";
 
 
 function Main() {
@@ -12,6 +13,7 @@ function Main() {
   return (
     <main className="content">
 <Header/>
+      <Promo/>
       <AboutProject/>
       <Techs/>
       <AboutMe/>

@@ -63,6 +63,7 @@ display: flex;
   .footer {
     width: 320px;
     margin: 0;
+
   }
   .footer__box{
     display: flex;

@@ -1,18 +1,15 @@
 import {Redirect, Route, Switch, useHistory} from 'react-router-dom'
 import './App.css';
 import '../../index.css';
-import Header from './../Header/Header';
-import Footer from './../Footer/Footer';
 import Main from "../Main/Main";
 import Movies from "../Movies/Movies";
-import Promo from "../Promo/Promo";
 import React from "react";
-import SearchForm from "../SearchForm/SearchForm";
 import Register from "../Register/Register";
 import Login from "../Login/Login";
 import Error404 from "../404/404";
 import Profile from "../Profile/Profile";
 import Navigation from "../Navigation/Navigation";
+import SavedMovies from "../SavedMovies/SavedMovies";
 
 
 function App() {
@@ -27,7 +24,10 @@ function App() {
           <Register/>
         </Route>
         <Route path="/movies">
-          <Movies/>
+        <Movies/>
+      </Route>
+        <Route path="/saved-movies">
+          <SavedMovies/>
         </Route>
         <Route path="/404" >
         <Error404/>

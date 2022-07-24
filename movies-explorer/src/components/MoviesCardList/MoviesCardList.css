@@ -1,5 +1,16 @@
-.MoviesCardList{
+.moviesCardList{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 
+}
+@media screen and (max-width: 1200px) {
+  .moviesCardList {
+    grid-template-columns: 1fr 1fr ;
+  }
+}
+@media screen and (max-width: 800px) {
+  .moviesCardList {
+    grid-template-columns: 1fr;
+    width: 320px;
+  }
 }
