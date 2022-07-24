@@ -1,6 +1,6 @@
 import React from 'react';
 import avatar from "../../images/avatar.jpg";
-import {Link} from "react-router-dom";
+import {Link, Route, Switch} from "react-router-dom";
 
 
 function Error404() {
@@ -8,7 +8,11 @@ function Error404() {
     <div className="error404">
       <h2 className="error__name">404</h2>
      <p className="error__description">Страница не найдена</p>
-      <Link className='error__link' >Назад</Link>
+      <Switch>
+        <Route path='/'>
+          <Link className='error__link' >Назад</Link>
+        </Route>
+       </Switch>
     </div>
   );
 }

@@ -1,8 +1,7 @@
 .movies{
   color: white;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows:  1fr 1fr 1fr 1fr;
+  display: flex;
+  flex-direction: column
 }
 .movies__card{}
 .movies__head{}

@@ -11,14 +11,14 @@ import SearchForm from "../SearchForm/SearchForm";
 import Register from "../Register/Register";
 import Login from "../Login/Login";
 import Error404 from "../404/404";
+import Profile from "../Profile/Profile";
+import Navigation from "../Navigation/Navigation";
 
 
 function App() {
   return (
     <div className="page">
-      <div className="head">
-      <Header/>
-        </div>
+
       <Switch>
         <Route path="/signin" >
           <Login/>
@@ -27,20 +27,26 @@ function App() {
           <Register/>
         </Route>
         <Route path="/movies">
-          <SearchForm/>
+
           <Movies/>
-        </Route>
-        <Route path="/profile">
+          <Footer/>
         </Route>
         <Route path="/404" >
         <Error404/>
         </Route>
+        <Route path="/profile">
+        <Profile/>
+      </Route>
         <Route path="/" >
+          <div className="head">
+            <Header/>
+          </div>
           <Promo/>
           <Main/>
+          <Footer/>
         </Route>
       </Switch>
-      <Footer/>
+      <Navigation/>
     </div>
   );
 }

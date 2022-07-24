@@ -72,9 +72,11 @@
     width: 292px;
   }
   .portfolio{
-    margin: 69px 0 70px 14px;
+    margin: 0;
+    width: 320px;
   }
   .portfolio__head{
+    margin-top: 70px;
     font-size: 14px;
     line-height: 20px;
   }

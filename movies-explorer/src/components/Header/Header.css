@@ -41,12 +41,19 @@
   font-size: 12px;
   line-height: 16px;
 }
-
+.header__link-white{
+  margin-left: 20px;
+  border: none;
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  line-height: 16px;
+}
 .header__link:last-child{
   color: black;
 }
 
-.header__link:hover{
+.header__link-white:hover{
   opacity: 0.5;
 }
 

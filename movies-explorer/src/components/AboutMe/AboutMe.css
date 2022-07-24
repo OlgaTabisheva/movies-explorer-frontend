@@ -92,7 +92,7 @@
   }
   .section-me{
 
-    margin-left: 14px;
+    margin-left: 0;
   }
   .section-me__name{
     margin: 0;
@@ -120,5 +120,12 @@
   .section-me__contacts-gh{
     font-size: 14px;
     line-height: 17px;
+  }
+  .section-me__student{
+
+    margin: 65px 0 0 14px;
+  }
+  .section-me__avatar{
+   margin-left: 14px;
   }
 }

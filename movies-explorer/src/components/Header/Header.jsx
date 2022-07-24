@@ -14,7 +14,7 @@ function Header() {
             <Link className='header__link' to='/signin'>Войти</Link>
           </Route>
           <Route path='/signup'>
-            <Link className='header__link' to='/signup'>Регистрация</Link>
+            <Link className='header__link-white' to='/signup'>Регистрация</Link>
           </Route>
           <Route path='*'>
             <Link className='header__link' to='/signup'>Регистрация</Link>

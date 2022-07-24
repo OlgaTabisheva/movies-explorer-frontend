@@ -26,7 +26,7 @@ function Register() {
                className="popup__input popup__input_type_job input" minLength={2} maxLength={200} required/>
         <span id="error-password" className="error-message error-message_visible"/>
         <button className="popup__button-save button" type="submit">Зарегистрироваться</button>
-        <Link className='register__login' to="/sign-in">Уже зарегистрированы? Войти</Link>
+        <Link className='register__login' to="/signin">Уже зарегистрированы? Войти</Link>
       </form>
     </div>
   );
