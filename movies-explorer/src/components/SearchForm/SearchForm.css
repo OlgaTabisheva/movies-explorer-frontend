@@ -4,14 +4,16 @@
   text-align: center;
   font-family: "Inter", 'Helvetica Neue', Arial, sans-serif;
   font-size: 25px;
-  line-height: 30x;
+  line-height: 30px;
   font-weight: 400;
   border-bottom: 1px solid;
 }
 .search__input{
   display: flex;
   flex-direction: row;
-  justify-content: space-around
+  justify-content: space-around;
+  background-color:#2F2F2F;
+  margin-bottom: 69px;
 }
 .search__film-box{
 display: flex;
@@ -28,7 +30,7 @@ display: flex;
   align-items: center;
 }
 .search__find{
-
+background-color: #4285F4;
 }
 .search__smalltumb{
 

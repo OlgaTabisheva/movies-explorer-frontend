@@ -3,16 +3,15 @@ import MoviesCard from "../MoviesCard/MoviesCard";
 import {Route, Switch} from "react-router-dom";
 
 
-function MoviesCardList() {
+function MoviesCardList(props) {
 
   return (
-    <MoviesCardList>
-      <Switch>
-        <Route>
-          <MoviesCard/>
-        </Route>
-      </Switch>
-    </MoviesCardList>
+    <div className="moviesCardList">
+      {props.cardsList.map((element) => (
+        <MoviesCard card={element}  key={element._id}></MoviesCard>
+      ))}
+    </div>
+
 
   );
 }

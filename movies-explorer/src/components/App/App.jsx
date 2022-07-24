@@ -27,9 +27,7 @@ function App() {
           <Register/>
         </Route>
         <Route path="/movies">
-
           <Movies/>
-          <Footer/>
         </Route>
         <Route path="/404" >
         <Error404/>
@@ -38,12 +36,7 @@ function App() {
         <Profile/>
       </Route>
         <Route path="/" >
-          <div className="head">
-            <Header/>
-          </div>
-          <Promo/>
           <Main/>
-          <Footer/>
         </Route>
       </Switch>
       <Navigation/>

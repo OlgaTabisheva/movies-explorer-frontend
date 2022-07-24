@@ -6,10 +6,12 @@ function SearchForm() {
   return (
     <div className="seatch">
 <div className="search__input">
+
   <div className="search__film-box">
     <img src={search} alt="Изображение поиска" className="movies__search-img"/>
-
-    <div className="search__film-name">Фильм</div>
+    <input  placeholder="Фильм" id="name"
+            name="search__film-name" type="text"
+            className="popup__input popup__input_type_name input" minLength={2} maxLength={40} required/>
   </div>
     <div className="search__section">
       <div className="search__find">Найти</div>
