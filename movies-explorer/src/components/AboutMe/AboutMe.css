@@ -116,10 +116,12 @@
   .section-me__contacts-fb{
     font-size: 14px;
     line-height: 17px;
+    color: white;
   }
   .section-me__contacts-gh{
     font-size: 14px;
     line-height: 17px;
+    color: white;
   }
   .section-me__student{
 
@@ -127,5 +129,6 @@
   }
   .section-me__avatar{
    margin-left: 14px;
+    margin-top: 60px;
   }
 }

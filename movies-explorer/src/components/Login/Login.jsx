@@ -8,7 +8,9 @@ function Login() {
   return (
     <div className="register">
       <form  id="form__input" name="profileInputForm" className="popup__form" >
+        <Link to='/'>
         <img src={logo} alt="Изображение логотипа в шапке" className="header__logo logo"/>
+        </Link>
         <h2 className="popup__title title">Рады видеть!</h2>
         <p className="input-text">E-mail</p>
         <input  id="email"
@@ -20,7 +22,7 @@ function Login() {
                 name="input-password" type='password'
                 className="popup__input popup__input_type_job input" minLength={2} maxLength={200} required/>
         <span id="error-password" className="error-message error-message_visible"/>
-        <button className="popup__button-save button" type="submit">Зарегистрироваться</button>
+        <button type="button" className="popup__button-save button" >Зарегистрироваться</button>
         <Link className='register__login' to="/signup">Еще не зарегистрированы? Регистрация</Link>
       </form>
     </div>

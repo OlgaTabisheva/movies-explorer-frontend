@@ -4,7 +4,7 @@ import avatar from "../../images/avatar.jpg";
 
 function AboutMe() {
   return (
-    <div className="section-me">
+    <main className="section-me">
       <h3 className="section-me__header">Студент</h3>
       <div className="line">
 
@@ -18,13 +18,13 @@ function AboutMe() {
         Нравится собирать грибы и кататься на велосипеде, путешествовать. Люблю животных, дома имеется рыжий кот.
       </p>
       <div className="section-me__contacts">
-        <a href="https://ru-ru.facebook.com/" className="section-me__contacts-fb" >Facebook </a>
-        <a href="https://github.com/" className="section-me__contacts-gh" >Github </a>
+        <a target="_blank" href="https://ru-ru.facebook.com/" className="section-me__contacts-fb" >Facebook </a>
+        <a target="_blank" href="https://github.com/" className="section-me__contacts-gh" >Github </a>
       </div>
       </div>
       <img src={avatar} alt="Изображение аватара" className="section-me__avatar"/>
     </div>
-    </div>
+    </main>
   );
 }
 

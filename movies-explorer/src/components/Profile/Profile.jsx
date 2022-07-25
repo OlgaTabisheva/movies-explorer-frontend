@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom"
 import logo from "../../images/logo.svg";
-import aclogo from "../../images/ac-logo.png";
+import aclogo from "../../images/ac-logo.svg";
 import burger from "../../images/burger.svg"
 
 function Profile() {
@@ -10,7 +10,7 @@ function Profile() {
   return (
     <nav className="profile">
       <div className="profile__head">
-        <img src={logo} alt="Изображение логотипа в шапке" className="header__logo"/>
+        <img src={logo} alt="Изображение логотипа в шапке" className="header__logo header__logo-profile"/>
         <div className='profile__film'>
           <Link className='profile__link' to='/movies'>Фильмы</Link>
           <Link className='profile__link' to='/saved-movies'>Сохраненные фильмы</Link>
@@ -19,8 +19,9 @@ function Profile() {
           <Link className='profile__menu' to='/'><img src={burger} alt="Изображение профиля" className="burger"/></Link>
         </div>
         <div className='profile__prof'>
-          <img src={aclogo} alt="Изображение профиля" className="ac__logo"/>
           <Link className='profile__link' to='/profile'>Аккаунт</Link>
+          <img src={aclogo} alt="Изображение профиля" className="ac__logo"/>
+
         </div>
       </div>
       <div className="profile__hello">Привет, Ольга!</div>

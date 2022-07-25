@@ -8,7 +8,9 @@ function Register() {
   return (
     <div className="register">
       <form  id="form__input" name="profileInputForm" className="popup__form" >
+        <Link to='/'>
         <img src={logo} alt="Изображение логотипа в шапке" className="header__logo logo"/>
+        </Link>
         <h2 className="popup__title title">Добро пожаловать!</h2>
         <p className="input-text">Имя</p>
         <input  id="name"
@@ -25,7 +27,7 @@ function Register() {
                name="input-password" type='password'
                className="popup__input popup__input_type_job input" minLength={2} maxLength={200} required/>
         <span id="error-password" className="error-message error-message_visible"/>
-        <button className="popup__button-save button" type="submit">Зарегистрироваться</button>
+        <button className="popup__button-save button" type="button">Зарегистрироваться</button>
         <Link className='register__login' to="/signin">Уже зарегистрированы? Войти</Link>
       </form>
     </div>

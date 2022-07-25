@@ -1,13 +1,11 @@
 import React from 'react';
-import aclogo from "../../images/ac-logo.png";
+import aclogo from "../../images/ac-logo.svg";
 import {Link} from "react-router-dom";
 
-function Navigation() {
+function Navigation(props) {
   return (
-    <div className={`popup popup_type_image-container`}>
-      <div className="popup__container-image">
-
-        <button type="button" className="popup__close ">
+    <div className={`popup ${props.isOpen ? 'popup_opened' : ''}`}>
+        <button type="button" className="popup__close" onClick={props.onClose}>
         </button>
         <div className='popup__film'>
           <Link className='popup__link' to='/'>Главная</Link>
@@ -20,7 +18,6 @@ function Navigation() {
             <Link className='profile__link' to='/profile'>Аккаунт</Link>
 
         </div>
-      </div>
     </div>
   );
 }

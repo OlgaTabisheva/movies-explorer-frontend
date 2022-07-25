@@ -1,5 +1,5 @@
 .profile__link{
-  margin-left: 20px;
+  margin-right: 20px;
   border: none;
   text-decoration: none;
   color: white;
@@ -33,6 +33,7 @@
 }
 .profile__prof{
   display: flex;
+  flex-direction: row;
 }
 .profile__hello{
   font-style: normal;
@@ -102,15 +103,21 @@ width: 410px;
   .profile__head{
     width: 780px;
     justify-content: space-around;
-    margin: 15px 0 0 200px;
+    margin: 15px 0 0 0;
+  }
+  .header__logo-profile{
+    margin-left: 0
+  }
+  .profile__prof-mobi{
+    margin-left: 380px;
   }
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 800px) {
 
   .profile__head{
     width: 320px;
     justify-content: space-around;
-    margin: 15px 0 0 100px;
+    margin: 15px 0 70px 14px;
   }
   .profile__email-box{
     width: 260px;
@@ -137,5 +144,8 @@ width: 410px;
   .profile__exit{
     font-size: 12px;
     line-height: 15px;
+  }
+  .profile__prof-mobi{
+    margin-left: 0;
   }
 }

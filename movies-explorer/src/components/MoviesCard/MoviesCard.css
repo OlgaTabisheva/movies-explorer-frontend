@@ -3,12 +3,13 @@
 }
 .movies__card{
   font-family: "Inter", 'Helvetica Neue', Arial, sans-serif;
-  margin-bottom: 32px;
+
   display: flex;
   align-content: flex-end;
   flex-direction: column;
   align-items: center;
   background-color: #222222;
+  margin: 0 16px 32px 16px;
 }
 .movies__img{
   width: 360px;
@@ -19,6 +20,9 @@
   justify-content: flex-start;
   flex-direction: row;
   margin-bottom: 18px;
+  width: 360px;
+  text-align: left;
+
 }
 .movies__name{
   width: 240px;
@@ -39,9 +43,12 @@
   height: 30px;
   text-align: center;
   color: #FFFFFF;
+  text-decoration: none;
+  border: none;
 }
 .movies__save-active{
   background-color: #EE3465;
+  text-decoration: none;
 }
 .movies__delete-active{
   background: #313131 url('../../images/delete_save.svg');
@@ -56,6 +63,9 @@
   .movies__name {
     width: 224px;
   }
+  .movies__head{
+    width: 342px;
+  }
 }
 @media screen and (max-width: 800px) {
   .movies__img{
@@ -69,5 +79,8 @@
     background-color: inherit;
     width: 320px;
     margin: 0;
+  }
+  .movies__head{
+    width: 300px;
   }
 }

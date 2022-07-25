@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 function SearchForm() {
   return (
     <div className="search">
-<div className="search__input">
+<form className="search__input">
 
   <div className="search__film-box">
     <img src={search} alt="Изображение поиска" className="movies__search-img"/>
@@ -19,10 +19,10 @@ function SearchForm() {
       <Link className='search__find' to='/404'>Найти</Link>
       <img src={line} alt="Изображение line" className="movies__search-line"/>
       <img src={smalltumb} alt="Изображение кнопки" className="search__smalltumb"/>
-      <Link className='search__find' to='/404'>Короткометражка</Link>
+      <button type="button" className='search__find' to='/404'>Короткометражка</button>
 
     </div>
-  </div>
+  </form>
 </div>
 
   );

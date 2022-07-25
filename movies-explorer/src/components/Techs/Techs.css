@@ -56,6 +56,7 @@
   line-height: 17px;
 }
 @media screen and (max-width: 1200px) {
+
   .technology__head-box{
     width: 768px;
   }
@@ -68,6 +69,9 @@
   }
 }
 @media screen and (max-width: 800px) {
+  .technology{
+    background-color: #202020;
+  }
   .technology__head-box{
     width: 320px;
   }
@@ -103,6 +107,9 @@
   .technology__line{
     width: 284px;
     margin: 28px 0 0 50px;
+  }
+  .technology__box{
+    padding-bottom: 70px;
   }
 
 }

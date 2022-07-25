@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer";
 import logo from "../../images/logo.svg";
 import {Link} from "react-router-dom";
 import burger from "../../images/burger.svg";
-import aclogo from "../../images/ac-logo.png";
+import aclogo from "../../images/ac-logo.svg";
 import MoviesCard from "../MoviesCard/MoviesCard";
 
 const cards = [
@@ -47,7 +47,9 @@ function SavedMovies() {
   return (
     <div className="movies">
       <div className="profile__head">
+        <Link to=''>
         <img src={logo} alt="Изображение логотипа в шапке" className="header__logo"/>
+        </Link>
         <div className='profile__film'>
           <Link className='profile__link' to='/movies'>Фильмы</Link>
           <Link className='profile__link' to='/saved-movies'>Сохраненные фильмы</Link>
