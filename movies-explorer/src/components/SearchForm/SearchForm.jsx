@@ -3,6 +3,7 @@ import search from "../../images/search.svg";
 import smalltumb from "../../images/smalltumb.svg";
 import line from "../../images/line.svg";
 import {Link} from "react-router-dom";
+import Navigation from "../Navigation/Navigation";
 
 function SearchForm() {
   return (
@@ -16,13 +17,16 @@ function SearchForm() {
             className="popup__input popup__input_type_name input" minLength={2} maxLength={40} required/>
   </div>
     <div className="search__section">
-      <Link className='search__find' to='/404'>Найти</Link>
+      <div className='search__blue'>
+      <Link className='search__find1' to='/404'>Найти</Link>
+        </div>
       <img src={line} alt="Изображение line" className="movies__search-line"/>
       <img src={smalltumb} alt="Изображение кнопки" className="search__smalltumb"/>
-      <button type="button" className='search__find' to='/404'>Короткометражка</button>
+      <button type="button" className='search__find2' to='/404'>Короткометражка</button>
 
     </div>
   </form>
+
 </div>
 
   );

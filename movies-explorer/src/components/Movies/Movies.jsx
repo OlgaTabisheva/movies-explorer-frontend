@@ -98,14 +98,8 @@ const cards = [
 
 ]
 
-function Movies() {
-  const [isNavPopupOpen, setIsNavPopupOpen] = React.useState(false);
-  function handleNavClick() {
-    setIsNavPopupOpen(true)
-  }
-  function closeAllPopups() {
-    setIsNavPopupOpen(false)
-  }
+function Movies(props) {
+
   return (
     <div className="movies">
       <div className="profile__head">
@@ -116,13 +110,17 @@ function Movies() {
           <Link className='profile__link' to='/movies'>Фильмы</Link>
           <Link className='profile__link' to='/saved-movies'>Сохраненные фильмы</Link>
         </div>
-        <button type="button" className='profile__prof-mobi'/> <img src={burger} alt="Изображение профиля" onClick={handleNavClick}/>
+
         <div className='profile__prof'>
-          <img src={aclogo} alt="Изображение профиля" className="ac__logo"/>
+          <img className='profile__prof-mobi' src={burger} alt="Изображение профиля" onClick={props.handleNavClick}/>
           <Link className='profile__link' to='/profile'>Аккаунт</Link>
+          <div className='profile__logo'>
+            <img src={aclogo} alt="Изображение профиля" className="ac__logo"/>
+          </div>
         </div>
-      </div>
-      <Navigation isOpen={isNavPopupOpen}  onClose={closeAllPopups}/>
+        </div>
+
+      <Navigation isOpen={props.isNavPopupOpen}  onClose={props.closeAllPopups}/>
       <SearchForm/>
       <MoviesCardList cardsList={cards} />
       <button type="button" className="profile__button" >Еще</button>

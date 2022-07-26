@@ -7,6 +7,7 @@ import {Link} from "react-router-dom";
 import burger from "../../images/burger.svg";
 import aclogo from "../../images/ac-logo.svg";
 import MoviesCard from "../MoviesCard/MoviesCard";
+import Navigation from "../Navigation/Navigation";
 
 const cards = [
   {
@@ -42,7 +43,7 @@ const cards = [
 
 ]
 
-function SavedMovies() {
+function SavedMovies(props) {
 
   return (
     <div className="movies">
@@ -54,14 +55,17 @@ function SavedMovies() {
           <Link className='profile__link' to='/movies'>Фильмы</Link>
           <Link className='profile__link' to='/saved-movies'>Сохраненные фильмы</Link>
         </div>
-        <div className='profile__prof-mobi'>
-          <Link className='profile__menu' to='/'><img src={burger} alt="Изображение профиля" className="burger"/></Link>
-        </div>
+
         <div className='profile__prof'>
-          <img src={aclogo} alt="Изображение профиля" className="ac__logo"/>
+          <img className='profile__prof-mobi' src={burger} alt="Изображение профиля" onClick={props.handleNavClick}/>
           <Link className='profile__link' to='/profile'>Аккаунт</Link>
+          <div className='profile__logo'>
+            <img src={aclogo} alt="Изображение профиля" className="ac__logo"/>
+          </div>
+
         </div>
       </div>
+      <Navigation isOpen={props.isNavPopupOpen}  onClose={props.closeAllPopups}/>
       <SearchForm/>
       <div className="moviesCardList">
       {cards.map((element) => (

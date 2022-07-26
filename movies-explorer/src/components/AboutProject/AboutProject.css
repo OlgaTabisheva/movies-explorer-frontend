@@ -25,6 +25,7 @@
 .nav__container{
   display: flex;
   margin-top: 70px;
+  text-align: left;
 }
 .nav__column{
   display: flex;
@@ -97,6 +98,7 @@ margin-left: 40px;
 }
 
 @media screen and (max-width: 1200px) {
+
   .nav{
     padding: 90px 0 0 50px;
 
@@ -112,6 +114,9 @@ margin-left: 40px;
   }
 }
 @media screen and (max-width: 800px) {
+  .nav__column:last-child {
+    margin-left: 0;
+  }
   .nav__container{
     flex-direction: column;
   }

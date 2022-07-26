@@ -3,8 +3,9 @@ import {Link} from "react-router-dom"
 import logo from "../../images/logo.svg";
 import aclogo from "../../images/ac-logo.svg";
 import burger from "../../images/burger.svg"
+import Navigation from "../Navigation/Navigation";
 
-function Profile() {
+function Profile(props) {
 
 
   return (
@@ -15,13 +16,13 @@ function Profile() {
           <Link className='profile__link' to='/movies'>Фильмы</Link>
           <Link className='profile__link' to='/saved-movies'>Сохраненные фильмы</Link>
         </div>
-        <div className='profile__prof-mobi'>
-          <Link className='profile__menu' to='/'><img src={burger} alt="Изображение профиля" className="burger"/></Link>
-        </div>
-        <div className='profile__prof'>
-          <Link className='profile__link' to='/profile'>Аккаунт</Link>
-          <img src={aclogo} alt="Изображение профиля" className="ac__logo"/>
 
+        <div className='profile__prof'>
+          <img className='profile__prof-mobi' src={burger} alt="Изображение профиля" onClick={props.handleNavClick}/>
+          <Link className='profile__link' to='/profile'>Аккаунт</Link>
+        <div className='profile__logo'>
+          <img src={aclogo} alt="Изображение профиля" className="ac__logo"/>
+        </div>
         </div>
       </div>
       <div className="profile__hello">Привет, Ольга!</div>
@@ -37,6 +38,7 @@ function Profile() {
       </div>
       <Link className='profile__redact profile__link' to='/profile'>Редактировать</Link>
       <Link className='profile__exit' to='/'>Выйти из аккаунта</Link>
+      <Navigation isOpen={props.isNavPopupOpen}  onClose={props.closeAllPopups}/>
     </nav>
   );
 }

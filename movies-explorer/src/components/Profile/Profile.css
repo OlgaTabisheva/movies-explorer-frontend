@@ -1,5 +1,5 @@
 .profile__link{
-  margin-right: 20px;
+  margin-right: 17px;
   border: none;
   text-decoration: none;
   color: white;
@@ -8,6 +8,15 @@
 }
 .profile__link:hover {
   opacity: 0.5;
+}
+.profile__logo{
+  width: 26px;
+  height: 30px;
+  border-radius: 4px;
+  background: #313131;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 .profile {
   width: 1280px;
@@ -34,6 +43,7 @@
 .profile__prof{
   display: flex;
   flex-direction: row;
+  align-items: center
 }
 .profile__hello{
   font-style: normal;

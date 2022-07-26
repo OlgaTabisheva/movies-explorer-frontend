@@ -26,6 +26,9 @@
   outline-offset: 0;
 
 }
+.profile__prof-mobi{
+  visibility: hidden;
+}
 .profile__button:hover{
   opacity: 0.5;
 }
@@ -37,10 +40,12 @@
   .profile__prof-mobi{
     background-color:  #202020;
     border: none;
+    visibility: visible;
   }
   .profile__prof-mobi:hover{
     opacity: 0.5;
   }
+
 }
 
 @media screen and (max-width: 800px) {

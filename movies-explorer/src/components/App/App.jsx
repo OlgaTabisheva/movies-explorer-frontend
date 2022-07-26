@@ -13,6 +13,14 @@ import SavedMovies from "../SavedMovies/SavedMovies";
 
 
 function App() {
+
+  const [isNavPopupOpen, setIsNavPopupOpen] = React.useState(false);
+  function handleNavClick() {
+    setIsNavPopupOpen(true)
+  }
+  function closeAllPopups() {
+    setIsNavPopupOpen(false)
+  }
   return (
     <div className="page">
 
@@ -24,16 +32,16 @@ function App() {
           <Register/>
         </Route>
         <Route path="/movies">
-        <Movies/>
+        <Movies handleNavClick={handleNavClick} isNavPopupOpen={isNavPopupOpen} closeAllPopups={closeAllPopups}/>
       </Route>
         <Route path="/saved-movies">
-          <SavedMovies/>
+          <SavedMovies  handleNavClick={handleNavClick} isNavPopupOpen={isNavPopupOpen} closeAllPopups={closeAllPopups}/>
         </Route>
         <Route path="/404" >
         <Error404/>
         </Route>
         <Route path="/profile">
-        <Profile/>
+        <Profile  handleNavClick={handleNavClick} isNavPopupOpen={isNavPopupOpen} closeAllPopups={closeAllPopups}/>
       </Route>
         <Route path="/" >
           <Main/>

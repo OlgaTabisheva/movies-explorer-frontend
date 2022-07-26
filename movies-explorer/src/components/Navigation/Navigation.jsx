@@ -14,8 +14,10 @@ function Navigation(props) {
         </div>
 
           <div className='popup__prof'>
-            <img src={aclogo} alt="Изображение профиля" className="ac__logo"/>
-            <Link className='profile__link' to='/profile'>Аккаунт</Link>
+            <Link className='popup__link' to='/profile'>Аккаунт</Link>
+            <div className='popup__logo'>
+              <img src={aclogo} alt="Изображение профиля" className="ac__logo"/>
+            </div>
 
         </div>
     </div>
