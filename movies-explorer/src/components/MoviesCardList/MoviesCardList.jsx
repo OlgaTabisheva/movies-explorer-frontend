@@ -1,6 +1,5 @@
 import React from 'react';
 import MoviesCard from "../MoviesCard/MoviesCard";
-import {Route, Switch} from "react-router-dom";
 
 
 function MoviesCardList(props) {
@@ -15,5 +14,6 @@ function MoviesCardList(props) {
 
   );
 }
+
 export default MoviesCardList;
 

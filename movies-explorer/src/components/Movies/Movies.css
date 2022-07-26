@@ -1,11 +1,12 @@
-.movies{
+.movies {
   color: white;
   display: flex;
   flex-direction: column;
   font-family: "Inter", 'Helvetica Neue', Arial, sans-serif;
 }
-.profile__button{
- background-color:  #2F2F2F;
+
+.profile__button {
+  background-color: #2F2F2F;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -17,38 +18,44 @@
   border-radius: 6px;
   height: 66px;
 }
-.input{
+
+.input {
   outline: none;
 }
-.popup__input{
-  outline:none;
+
+.popup__input {
+  outline: none;
   box-shadow: none;
   outline-offset: 0;
 
 }
-.profile__prof-mobi{
+
+.profile__prof-mobi {
   visibility: hidden;
 }
-.profile__button:hover{
+
+.profile__button:hover {
   opacity: 0.5;
 }
 
-@media screen and (max-width: 1200px) {
-  .profile__button{
-   height: 36px;
+@media screen and (max-width: 1279px) {
+  .profile__button {
+    height: 36px;
   }
-  .profile__prof-mobi{
-    background-color:  #202020;
+
+  .profile__prof-mobi {
+    background-color: #202020;
     border: none;
     visibility: visible;
   }
-  .profile__prof-mobi:hover{
+
+  .profile__prof-mobi:hover {
     opacity: 0.5;
   }
 
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 930px) {
   .movies {
 
     width: 320px;

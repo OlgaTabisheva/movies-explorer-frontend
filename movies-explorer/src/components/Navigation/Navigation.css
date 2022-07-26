@@ -1,7 +1,7 @@
 .popup {
   position: fixed;
-  top: 0;
-bottom: 0;
+  top: 8px;
+  bottom: 0;
   right: 0;
   visibility: hidden;
   background-color: #202020;
@@ -11,7 +11,7 @@ bottom: 0;
 
 }
 
-.popup__link{
+.popup__link {
   margin-right: 17px;
   border: none;
   text-decoration: none;
@@ -19,10 +19,12 @@ bottom: 0;
   font-size: 12px;
   line-height: 16px;
 }
+
 .popup__link:hover {
   opacity: 0.5;
 }
-.popup__logo{
+
+.popup__logo {
   width: 26px;
   height: 30px;
   border-radius: 4px;
@@ -31,7 +33,8 @@ bottom: 0;
   align-items: center;
   display: flex;
 }
-.popup__prof{
+
+.popup__prof {
   margin-bottom: 60px;
 
 }
@@ -49,21 +52,21 @@ bottom: 0;
   top: 0;
   right: 0;
   left: 485px;
- bottom: 0;
+  bottom: 0;
 }
 
 .popup__close:hover {
   opacity: 60%;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1279px) {
 
-  .popup_opened{
+  .popup_opened {
     visibility: visible;
   }
 
 
-  .popup__prof{
+  .popup__prof {
     color: #FFFFFF;
     margin-top: 480px;
     font-weight: 500;
@@ -75,13 +78,15 @@ bottom: 0;
     justify-content: center;
 
   }
-  .popup__film{
+
+  .popup__film {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     margin-top: 130px;
   }
-  .popup__link{
+
+  .popup__link {
     margin-left: 20px;
     border: none;
     text-decoration: none;
@@ -94,7 +99,8 @@ bottom: 0;
     text-align: center;
 
   }
-  .popup__link-bottom{
+
+  .popup__link-bottom {
     margin-right: 17px;
     border: none;
     text-decoration: none;
@@ -103,28 +109,32 @@ bottom: 0;
     line-height: 16px;
     padding-bottom: 100px;
   }
+
   .popup__link:hover {
     opacity: 0.5;
     text-decoration: underline;
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 930px) {
   .popup__close {
 
-   left: 280px;
+    left: 280px;
 
   }
+
   .popup {
     max-width: 320px;
     width: 100%;
   }
-  .popup__prof{
+
+  .popup__prof {
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
   }
-  .popup__film{
+
+  .popup__film {
     font-weight: 500;
     font-size: 18px;
     line-height: 22px;

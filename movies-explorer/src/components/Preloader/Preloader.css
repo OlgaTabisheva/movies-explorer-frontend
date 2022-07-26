@@ -8,6 +8,7 @@
   z-index: 9999;
   background-color: #FFF;
 }
+
 #preloader.hide-preloader {
   animation: hidePreloader 1s;
 }

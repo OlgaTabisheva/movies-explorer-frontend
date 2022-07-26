@@ -1,4 +1,4 @@
-.technology{
+.technology {
   background-color: #272727;
   color: white;
   text-align: center;
@@ -6,12 +6,14 @@
   align-items: center;
   flex-direction: column;
 }
-.technology__head-box{
+
+.technology__head-box {
   width: 1280px;
   display: flex;
   flex-direction: column
 }
-.technology__head{
+
+.technology__head {
   display: flex;
   font-style: normal;
   font-size: 22px;
@@ -19,17 +21,19 @@
   margin: 100px 0 0 70px;
 }
 
-.technology__line{
+.technology__line {
   margin-left: 70px;
   color: #FFFFFF;
   width: 1140px;
 }
+
 .technology__about {
   margin: 90px 0 26px 0;
   font-weight: 400;
   font-size: 50px;
   line-height: 58px;
 }
+
 .technology__text {
   width: 460px;
   margin: 0 0 100px 0;
@@ -39,11 +43,13 @@
   display: flex;
 
 }
+
 .technology__box {
   display: flex;
   justify-content: center;
 }
-.technology__section{
+
+.technology__section {
   width: 90px;
   height: 60px;
   background-color: #303030;
@@ -51,64 +57,77 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px ;
+  border-radius: 10px;
   font-size: 14px;
   line-height: 17px;
 }
-@media screen and (max-width: 1200px) {
 
-  .technology__head-box{
+@media screen and (max-width: 1279px) {
+
+  .technology__head-box {
     width: 768px;
   }
-  .technology__line{
+
+  .technology__line {
     width: 668px;
   }
-  .technology__head{
+
+  .technology__head {
 
     margin: 90px 0 0 70px;
   }
 }
-@media screen and (max-width: 800px) {
-  .technology{
+
+@media screen and (max-width: 930px) {
+  .technology {
     background-color: #202020;
   }
-  .technology__head-box{
+
+  .technology__head-box {
     width: 320px;
   }
-  .technology__line{
+
+  .technology__line {
     width: 284px;
   }
+
   .technology__box {
     display: grid;
     grid-template-columns:  1fr 1fr;
   }
-  .technology__section{
+
+  .technology__section {
     margin: 0 10px 10px 10px;
     font-size: 12px;
     line-height: 15px;
     letter-spacing: -0.04em;
   }
+
   .technology__text {
     width: 292px;
     margin: 0 0 60px 0;
     font-size: 11px;
     line-height: 16px;
   }
+
   .technology__about {
     font-size: 30px;
     line-height: 36px;
     text-align: center;
     letter-spacing: -0.04em;
   }
-  .technology__head{
+
+  .technology__head {
 
     margin: 90px 0 0 50px;
   }
-  .technology__line{
+
+  .technology__line {
     width: 284px;
     margin: 28px 0 0 50px;
   }
-  .technology__box{
+
+  .technology__box {
     padding-bottom: 70px;
   }
 

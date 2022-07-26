@@ -11,15 +11,17 @@ import Promo from "../Promo/Promo";
 function Main() {
 
   return (
-    <main className="content">
-<Header/>
-      <Promo/>
-      <AboutProject/>
-      <Techs/>
-      <AboutMe/>
-      <Portfolio/>
+    <div className="content">
+      <Header/>
+      <main>
+        <Promo/>
+        <AboutProject/>
+        <Techs/>
+        <AboutMe/>
+        <Portfolio/>
+      </main>
       <Footer/>
-    </main>
+    </div>
   );
 }
 

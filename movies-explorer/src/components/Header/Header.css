@@ -1,4 +1,4 @@
-.head{
+.head {
   background-color: #073042;
   font-family: "Inter", 'Helvetica Neue', Arial, sans-serif;
   font-size: 18px;
@@ -17,7 +17,7 @@
   height: 74px;
 }
 
-.header__logo{
+.header__logo {
   margin: 0;
   height: 38px;
   width: 38px;
@@ -33,7 +33,7 @@
   color: white;
 }
 
-.header__link{
+.header__link {
   margin-left: 20px;
   border: none;
   text-decoration: none;
@@ -41,7 +41,8 @@
   font-size: 12px;
   line-height: 16px;
 }
-.header__link-white{
+
+.header__link-white {
   margin-left: 20px;
   border: none;
   text-decoration: none;
@@ -49,37 +50,39 @@
   font-size: 12px;
   line-height: 16px;
 }
-.header__link:last-child{
+
+.header__link:last-child {
   color: black;
 }
 
-.header__link-white:hover{
+.header__link-white:hover {
   opacity: 0.5;
 }
 
-a:visited{
-  color:white;
+a:visited {
+  color: white;
 }
 
-.header__link-box{
+.header__link-box {
   margin-left: 30px;
   background: #3DDC84;
   border-radius: 3px;
-  Width :76px;
+  Width: 76px;
   Height: 32px;
   display: flex;
   align-items: center
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1279px) {
 
   .head {
     width: 780px;
 
   }
+
   .header {
     padding: 0 50px 0 50px;
-width: 680px;
+    width: 680px;
   }
 
   .header__logo {
@@ -88,16 +91,19 @@ width: 680px;
   }
 
 }
-@media screen and (max-width: 800px) {
+
+@media screen and (max-width: 930px) {
 
   .head {
     width: 320px;
 
   }
+
   .header {
     padding: 18px 0 0 0;
     width: 320px;
   }
+
   .header__logo {
     margin: 0 0 0 14px;
 
