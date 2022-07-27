@@ -1,0 +1,24 @@
+.content {
+  font-family: "Inter", 'Helvetica Neue', Arial, sans-serif;
+  font-size: 18px;
+  line-height: 21.78px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  width: 1280px;
+}
+
+@media screen and (max-width: 1279px) {
+
+  .content {
+    width: 768px;
+  }
+
+}
+
+@media screen and (max-width: 930px) {
+
+  .content {
+    width: 320px;
+  }
+}

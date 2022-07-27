@@ -1,0 +1,63 @@
+.error404 {
+  font-family: "Inter", 'Helvetica Neue', Arial, sans-serif;
+  color: white;
+  font-style: normal;
+  text-align: center;
+  font-weight: 400;
+}
+
+.error__name {
+  font-weight: 400;
+  font-size: 140px;
+  line-height: 169px;
+  margin: 246px 0 5px 0;
+
+}
+
+.error__description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  margin: 0 0 184px 0;
+}
+
+.error__link {
+  text-decoration: none;
+  font-style: normal;
+
+  font-size: 14px;
+  line-height: 17px;
+  margin-bottom: 60px;
+  color: #4285F4;
+}
+
+.error__link:hover {
+  color: #4285F4;
+}
+
+@media screen and (max-width: 1279px) {
+  .error__name {
+    font-size: 140px;
+    line-height: 169px;
+  }
+
+  .error__description {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+}
+
+@media screen and (max-width: 930px) {
+
+  .error__name {
+    font-size: 80px;
+    line-height: 97px;
+  }
+
+  .error__description {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+

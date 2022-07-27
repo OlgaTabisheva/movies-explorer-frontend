@@ -1,0 +1,98 @@
+.element {
+  background-color: magenta;
+}
+
+.movies__card {
+  font-family: "Inter", 'Helvetica Neue', Arial, sans-serif;
+
+  display: flex;
+  align-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  background-color: #222222;
+  margin: 0 16px 32px 16px;
+}
+
+.movies__img {
+  width: 360px;
+  height: 200px;
+}
+
+.movies__head {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin-bottom: 18px;
+  width: 360px;
+  text-align: left;
+
+}
+
+.movies__name {
+  width: 240px;
+  margin-right: 14px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.movies__save {
+  margin-top: 18px;
+  margin-bottom: 18px;
+  background-color: #313131;
+  border-radius: 30px;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  color: #FFFFFF;
+  text-decoration: none;
+  border: none;
+}
+
+.movies__save-active {
+  background-color: #EE3465;
+  text-decoration: none;
+}
+
+.movies__delete-active {
+  background: #313131 url('../../images/delete_save.svg');
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1279px) {
+  .movies__img {
+    width: 342px;
+    height: 190px;
+  }
+
+  .movies__name {
+    width: 224px;
+  }
+
+  .movies__head {
+    width: 342px;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .movies__img {
+    width: 300px;
+    height: 168px;
+  }
+
+  .movies__name {
+    width: 200px;
+  }
+
+  .movies__card {
+    background-color: inherit;
+    width: 320px;
+    margin: 0;
+  }
+
+  .movies__head {
+    width: 300px;
+  }
+}

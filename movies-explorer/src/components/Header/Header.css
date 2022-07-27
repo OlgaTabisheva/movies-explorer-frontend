@@ -1,0 +1,112 @@
+.head {
+  background-color: #073042;
+  font-family: "Inter", 'Helvetica Neue', Arial, sans-serif;
+  font-size: 18px;
+  line-height: 21.78px;
+  font-weight: 400;
+  color: white;
+  width: 1280px;
+}
+
+.header {
+  background-color: #073042;
+  padding: 18px 70px 0 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 74px;
+}
+
+.header__logo {
+  margin: 0;
+  height: 38px;
+  width: 38px;
+  justify-self: start;
+  justify-content: flex-start;
+}
+
+.header__nav {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: white;
+}
+
+.header__link {
+  margin-left: 20px;
+  border: none;
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.header__link-white {
+  margin-left: 20px;
+  border: none;
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.header__link:last-child {
+  color: black;
+}
+
+.header__link-white:hover {
+  opacity: 0.5;
+}
+
+a:visited {
+  color: white;
+}
+
+.header__link-box {
+  margin-left: 30px;
+  background: #3DDC84;
+  border-radius: 3px;
+  Width: 76px;
+  Height: 32px;
+  display: flex;
+  align-items: center
+}
+
+@media screen and (max-width: 1279px) {
+
+  .head {
+    width: 780px;
+
+  }
+
+  .header {
+    padding: 0 50px 0 50px;
+    width: 680px;
+  }
+
+  .header__logo {
+    margin: 0 70px 0 70px;
+
+  }
+
+}
+
+@media screen and (max-width: 930px) {
+
+  .head {
+    width: 320px;
+
+  }
+
+  .header {
+    padding: 18px 0 0 0;
+    width: 320px;
+  }
+
+  .header__logo {
+    margin: 0 0 0 14px;
+
+  }
+}
+
