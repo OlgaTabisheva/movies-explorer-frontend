@@ -3,11 +3,11 @@ import MoviesCard from "../MoviesCard/MoviesCard";
 
 
 function MoviesCardList(props) {
-
+  let MoviesCardListClassName = (`moviesCardList ${props.isVisible ? ' moviesCardList_active' : ''}`);
   return (
-    <div className="moviesCardList">
+    <div className={MoviesCardListClassName}>
       {props.cardsList.map((element) => (
-        <MoviesCard card={element} saved={"false"} key={element._id}></MoviesCard>
+        <MoviesCard card={element} saved={"false"} key={element.id}></MoviesCard>
       ))}
     </div>
 

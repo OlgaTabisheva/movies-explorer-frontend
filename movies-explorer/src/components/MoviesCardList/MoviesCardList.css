@@ -1,8 +1,12 @@
 .moviesCardList {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-
+visibility: hidden;
 }
+.moviesCardList_active{
+  visibility: visible;
+}
+
 
 @media screen and (max-width: 1279px) {
   .moviesCardList {
