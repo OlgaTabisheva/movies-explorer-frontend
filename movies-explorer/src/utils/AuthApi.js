@@ -3,13 +3,14 @@ class AuthApi {
     this._baseUrl = baseUrl
   }
 
-  signup(email, password) {
+  signup(name, email, password) {
     return fetch(`${this._baseUrl}/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
+        name: name,
         email: email,
         password: password
       })
@@ -52,6 +53,6 @@ class AuthApi {
 }
 
 export const authApi = new AuthApi({
-  baseUrl: 'https://iamthebest.back.nomoreparties.sbs',
+  baseUrl: 'http://localhost:3001',
 });
 

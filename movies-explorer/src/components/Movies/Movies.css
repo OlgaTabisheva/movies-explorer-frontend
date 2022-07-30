@@ -23,12 +23,6 @@
   outline: none;
 }
 
-.popup__input {
-  outline: none;
-  box-shadow: none;
-  outline-offset: 0;
-
-}
 
 .profile__prof-mobi {
   visibility: hidden;

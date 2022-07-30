@@ -30,6 +30,8 @@ code {
 @import url(./components/Profile/Profile.css);
 @import url(./components/Navigation/Navigation.css);
 @import url(./components/SavedMovies/SavedMovies.css);
+@import url(./components/RedactProfilePopup/RedactProfilePopup.css);
+@import url(./components/PopupWithForm/PopupWithForm.css);
 
 
 

@@ -49,7 +49,7 @@
 
 .profile__prof {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   align-items: center
 }
 
@@ -130,9 +130,11 @@
   }
 
   .profile__head {
-    width: 780px;
+    width: 920px;
     justify-content: space-around;
-    margin: 15px 0 0 0;
+    margin: 15px 5px 5px;
+
+
   }
 
   .header__logo-profile {
@@ -147,9 +149,9 @@
 @media screen and (max-width: 930px) {
 
   .profile__head {
-    width: 320px;
     justify-content: space-around;
-    margin: 15px 0 70px 14px;
+    width: 360px;
+    margin: 15px 5px 0 5px;
   }
 
   .profile__email-box {
