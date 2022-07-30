@@ -12,6 +12,7 @@ class MoviesApi {
       .then(res => this._getResponseData(res))
 
   }
+
   _getResponseData(res) {
     if (!res.ok) {
       return Promise.reject(`Ошибка: ${res.status}`);

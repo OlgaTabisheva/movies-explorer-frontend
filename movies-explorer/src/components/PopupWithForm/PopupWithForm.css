@@ -1,4 +1,4 @@
-.popup-red__container{
+.popup-red__container {
   background-color: #FFFFFF;
   width: 510px;
   display: flex;
@@ -8,11 +8,12 @@
   border-radius: 10px;
 }
 
-.popup-red{
-  top: 150px;
+.popup-red {
+  top: 130px;
   right: inherit;
 }
-.popup__button-red{
+
+.popup__button-red {
   font-family: "Inter", 'Helvetica Neue', Arial, sans-serif;
   text-decoration: none;
   border: none;
@@ -21,11 +22,12 @@
   margin-bottom: 16px;
 
 }
-.popup__button-red:hover{
+
+.popup__button-red:hover {
   opacity: 50%;
 }
 
-.popup__button-exit{
+.popup__button-exit {
   font-family: "Inter", 'Helvetica Neue', Arial, sans-serif;
   text-decoration: none;
   border: none;
@@ -33,6 +35,7 @@
   color: red;
   margin-bottom: 50px;
 }
-.popup__button-exit:hover{
+
+.popup__button-exit:hover {
   opacity: 50%;
 }

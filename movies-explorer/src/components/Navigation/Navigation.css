@@ -10,6 +10,7 @@
   font-family: "Inter", 'Helvetica Neue', Arial, sans-serif;
 
 }
+
 .popup_opened {
   visibility: visible;
 }
@@ -63,8 +64,6 @@
 }
 
 @media screen and (max-width: 1279px) {
-
-
 
 
   .popup__prof {
@@ -124,11 +123,10 @@
 
   }
 
-  .popup {
-    max-width: 320px;
-    width: 100%;
-  }
-
+  /*  .popup {
+      max-width: 320px;
+      width: 100%;
+    }*/
   .popup__prof {
     font-weight: 500;
     font-size: 14px;

@@ -3,22 +3,22 @@ import {Link} from "react-router-dom"
 import logo from '../../images/logo.svg';
 
 
-  function Login(props) {
-    const [email, setEmail] = React.useState("");
-    const [password, setPassword] = React.useState("");
+function Login(props) {
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
 
-    function signIn(e) {
-      e.preventDefault();
-      props.handleLogin(email, password)
-    }
+  function signIn(e) {
+    e.preventDefault();
+    props.handleLogin(email, password)
+  }
 
-    function handleChangeEmail(e) {
-      setEmail(e.target.value);
-    }
+  function handleChangeEmail(e) {
+    setEmail(e.target.value);
+  }
 
-    function handleChangePassword(e) {
-      setPassword(e.target.value);
-    }
+  function handleChangePassword(e) {
+    setPassword(e.target.value);
+  }
 
   return (
     <div className="register">

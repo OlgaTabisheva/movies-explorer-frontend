@@ -1,4 +1,5 @@
 import React from 'react';
+
 /*
 
 "id": 1,
@@ -72,7 +73,8 @@ function MoviesCard(props) {
         <div className="movies__name">{props.card.nameRU}</div>
         <div className="movies__time">{props.card.duration}</div>
       </div>
-      <img src={ "https://api.nomoreparties.co" + props.card?.image?.formats?.thumbnail?.url} alt="Изображение аватара" className="movies__img"/>
+      <img src={"https://api.nomoreparties.co" + props.card?.image?.formats?.thumbnail?.url} alt="Изображение аватара"
+           className="movies__img"/>
       <button className={cardSaveButtonClassName}>{cardSaveButtonText} </button>
 
     </div>

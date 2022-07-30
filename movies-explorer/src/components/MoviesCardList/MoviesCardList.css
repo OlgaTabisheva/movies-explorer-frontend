@@ -1,9 +1,10 @@
 .moviesCardList {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-visibility: hidden;
+  visibility: hidden;
 }
-.moviesCardList_active{
+
+.moviesCardList_active {
   visibility: visible;
 }
 

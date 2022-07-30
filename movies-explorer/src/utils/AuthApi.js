@@ -1,5 +1,5 @@
 class AuthApi {
-  constructor({baseUrl, }) {
+  constructor({baseUrl,}) {
     this._baseUrl = baseUrl
   }
 
@@ -37,11 +37,11 @@ class AuthApi {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "Authorization" : `Bearer ${JWT}`
+        "Authorization": `Bearer ${JWT}`
       },
     })
       .then(res => this._getResponseData(res))
-      .catch(err=> console.log(err))
+      .catch(err => console.log(err))
   }
 
   _getResponseData(res) {

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Footer from "../Footer/Footer";
@@ -7,30 +7,10 @@ import {Link} from "react-router-dom";
 import burger from "../../images/burger.svg";
 import aclogo from "../../images/ac-logo.svg";
 import Navigation from "../Navigation/Navigation";
-import {moviesApi} from "../../utils/MoviesApi"
 import Preloader from "../Preloader/Preloader";
 
 function Movies(props) {
 
-  const [movies, setMovies] = React.useState([])
-  const [searchPressed, setSearchPressed] = React.useState(false)
-
-
-  useEffect(() => {
-    if (!searchPressed){
-      return
-    }
-    Promise.all([moviesApi.getInitialMovies()])
-      .then(([newMovies]) => {
-        setMovies(newMovies)
-      }).catch(err => console.log(err))
-
-  }, [searchPressed]);
-
-
-function searchCallback(){
-  setSearchPressed(true)
-}
   return (
     <div className="movies">
       <div className="profile__head">
@@ -52,11 +32,11 @@ function searchCallback(){
 
       <main>
         <Navigation isOpen={props.isNavPopupOpen} onClose={props.closeAllPopups}/>
-        <SearchForm searchCallback={searchCallback}/>
+        <SearchForm searchCallback={props.searchCallback} setMovieName={props.setMovieName}/>
         <Preloader/>
-        <MoviesCardList cardsList={movies} isVisible={searchPressed}/>
+        <MoviesCardList cardsList={props.movies} isVisible={props.searchPressed}/>
         <p className='profile__save'> Ничего не найдено </p>
-        <button type="button" className="profile__button">Еще</button>
+        <button type="button" className="profile__button" onClick={props.moreCallback}>Еще</button>
       </main>
       <Footer/>
     </div>

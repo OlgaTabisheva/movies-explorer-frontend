@@ -33,15 +33,15 @@ class MainApi {
     return res.json();
   }
 
-  setToken(newToken){
-    this._headers={
+  setToken(newToken) {
+    this._headers = {
       authorization: `Bearer ${newToken}`,
       'Content-Type': 'application/json'
     };
   }
 }
 
-export const api = new MainApi({
+export const mainApi = new MainApi({
   baseUrl: 'http://localhost:3001',
   headers: {
     authorization: `Bearer ${localStorage.getItem('JWT')}`,

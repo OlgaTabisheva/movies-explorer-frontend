@@ -19,23 +19,25 @@ function Register(props) {
   function handleChangePassword(e) {
     setPassword(e.target.value);
   }
+
   function handleChangeName(e) {
     setName(e.target.value);
   }
+
   return (
     <div className="register">
-      <form  onSubmit={signUp} id="form__input" name="profileInputForm" className="popup__form">
+      <form onSubmit={signUp} id="form__input" name="profileInputForm" className="popup__form">
         <Link to='/'>
           <img src={logo} alt="Изображение логотипа в шапке" className="header__logo logo"/>
         </Link>
         <h2 className="popup__title title">Добро пожаловать!</h2>
         <p className="input-text">Имя</p>
-        <input onChange={handleChangeName}id="name"
+        <input onChange={handleChangeName} id="name"
                name="input-name" type="text"
                className="input popup__input popup__input_type_name" minLength={2} maxLength={40} required/>
         <span id="error-name" className="error-message error-message_visible"/>
         <p className="input-text">E-mail</p>
-        <input onChange={handleChangeEmail}  id="email"
+        <input onChange={handleChangeEmail} id="email"
                name="input-email" type="text"
                className="input popup__input popup__input_type_email " minLength={2} maxLength={40} required/>
         <span id="error-email" className="error-message error-message_visible"/>

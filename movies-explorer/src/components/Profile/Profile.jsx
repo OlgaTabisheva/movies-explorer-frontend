@@ -11,6 +11,11 @@ function Profile(props) {
 
   const currentUser = React.useContext(currentUserContext)
 
+  function logOut() {
+    if (props.signOut)
+      props.signOut()
+  }
+
   return (
     <nav className="profile">
       <div className="profile__head">
@@ -39,9 +44,10 @@ function Profile(props) {
         <div className="profile__email">{currentUser.email}</div>
       </div>
       <Link className='profile__redact profile__link' to='/profile' onClick={props.handleRedClick}>Редактировать</Link>
-      <Link className='profile__exit' to='/'>Выйти из аккаунта</Link>
+      <Link className='profile__exit' onClick={logOut} to='/'>Выйти из аккаунта</Link>
       <Navigation isOpen={props.isNavPopupOpen} onClose={props.closeAllPopups}/>
-      <RedactProfilePopup isOpen={props.isRedPopupOpen} onClose={props.closeAllPopups}  onUpdateUser={props.handleUpdateUser}/>
+      <RedactProfilePopup isOpen={props.isRedPopupOpen} onClose={props.closeAllPopups}
+                          onUpdateUser={props.handleUpdateUser}/>
     </nav>
   );
 }

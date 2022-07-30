@@ -11,7 +11,7 @@ function RedactProfilePopup(props) {
     setName(currentUser.name);
     setEmail(currentUser.email);
 
-  },  [currentUser, props.isOpen]);
+  }, [currentUser, props.isOpen]);
 
   function handleChangeName(e) {
 
@@ -31,16 +31,17 @@ function RedactProfilePopup(props) {
       email: email,
     });
   }
+
   return (
     <PopupWithForm className="Edit" name='edit' isOpen={props.isOpen} onClose={props.onClose} onSubmit={handleSubmit}
-                   buttonText="Coxранить"          >
-      <form id="form__input" name="profileInputForm" className="popup__form" >
+                   buttonText="Coxранить">
+      <form id="form__input" name="profileInputForm" className="popup__form">
         <h2 className="popup__title">Привет, {currentUser.name}!</h2>
-        <input onChange={handleChangeName} value={ name || ''} placeholder="Введите имя пользователя" id="name"
+        <input onChange={handleChangeName} value={name || ''} placeholder="Введите имя пользователя" id="name"
                name="input-name" type="text"
                className="popup__input popup__input_type_name" minLength={2} maxLength={40} required/>
         <span id="error-name" className="error-message error-message_visible"/>
-        <input  onChange={handleChangeEmail} value={email || ''}   placeholder="Введите email" id="email"
+        <input onChange={handleChangeEmail} value={email || ''} placeholder="Введите email" id="email"
                name="input-email" type="text"
                className="popup__input popup__input_type_job" minLength={2} maxLength={200} required/>
         <span id="error-job" className="error-message error-message_visible"/>

@@ -9,6 +9,7 @@
   margin-bottom: 70px;
   margin-top: 70px;
 }
+
 .search__section2 {
 
   display: flex;
@@ -16,7 +17,7 @@
   background-color: #202020;
 }
 
-.search__findDeck{
+.search__findDeck {
   font-style: normal;
   font-weight: 500;
   font-size: 11px;
@@ -36,6 +37,7 @@
   margin-left: 30px;
 
 }
+
 .search__input {
   display: flex;
   flex-direction: row;
@@ -98,7 +100,20 @@
 
 .search__smalltumb {
   margin-right: 14px;
+  background-image: url('../../images/smalltumb_black.svg');
+  background-position: center;
+  width: 41px;
+  height: 27px;
+  background-color: inherit;
+  background-repeat: no-repeat;
+  border: none;
+
 }
+
+.search__smalltumb_active {
+  background-image: url('../../images/smalltumb.svg');
+}
+
 
 .search__long {
   font-style: normal;
@@ -153,16 +168,20 @@
   .search__find {
     background-color: #202020;
   }
-  .search__smalltumb{
+
+  .search__smalltumb {
     margin: 0;
   }
-  .search__input-form{
+
+  .search__input-form {
     margin: 0;
   }
-  .search__findDeck{
+
+  .search__findDeck {
     visibility: hidden;
   }
-  .search__findMobile{
+
+  .search__findMobile {
     visibility: visible;
     margin: 16px;
   }
