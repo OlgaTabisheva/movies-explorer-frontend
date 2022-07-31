@@ -72,6 +72,7 @@ function App() {
       showNMovies(foundMovies);
       setSearchPressed(true)
     }
+    setPreloaderShown(false)
   }, [foundMovies]);
 
   useEffect(() => {
@@ -80,6 +81,8 @@ function App() {
       showNMovies(foundSavedMovies);
       setSaveSearchPressed(true)
     }
+    else
+      setPreloaderShown(false)
   }, [foundSavedMovies]);
 
   useEffect(() => {
@@ -196,6 +199,8 @@ function App() {
       card.id,
       card.nameRU,
       card.nameEN).then((data)=>{
+      const joined = savedMoviesIds.concat(card.id);
+      setSavedMoviesIds(joined)
     }).catch(console.log)
   }
 
@@ -203,6 +208,8 @@ function App() {
     mainApi.deleteMovie(
       card.movieId
     ).then((data) => {
+      setSavedMovies(savedMovies.filter(item => item.movieId !== card.movieId))
+      setFoundSavedMovies(foundSavedMovies.filter(item => item.movieId !== card.movieId))
     }).catch(console.log)
   }
 
