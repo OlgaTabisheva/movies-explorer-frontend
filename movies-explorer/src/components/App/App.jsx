@@ -25,7 +25,7 @@ function App() {
   const [loggedIn, setIsloggedIn] = React.useState(false)
   const [userData, setUserData] = useState(null);
   const [movieName, setMovieName] = useState("");
-  const [movieNumber, setMovieNumber] = useState(7);
+  const [movieNumber, setMovieNumber] = useState(0);
   const [movies, setMovies] = React.useState([]) // карточки с стороннего сервера
   const [searchPressed, setSearchPressed] = React.useState(false)
   const [moviesForView, setMoviesForView] = React.useState([]) // отображаемые карточки
@@ -45,11 +45,22 @@ function App() {
 
   useEffect(() => {
     tokenCheck();
+
+    if (movieNumber == 0) {
+      if (window.innerWidth >= 1280)
+        setMovieNumber(12)
+      else if (window.innerWidth < 1279)
+        setMovieNumber(8)
+      else if (window.innerWidth < 768)
+        setMovieNumber(5)
+    }
+
   }, []);
 
 
   useEffect(() => {
     if (foundMovies.length !== 0) {
+
       showNMovies();
       setSearchPressed(true)
     }
@@ -119,9 +130,33 @@ function App() {
   function handleNavClick() {
     setIsNavPopupOpen(true)
   }
+  function handleSaveClick(card) {
+ console.log(card)
+    mainApi.saveMovie(
+      card.country,
+      card.director,
+      card.duration,
+      card.year,
+      card.description,
+      "https://api.nomoreparties.co" + card.image.url,
+      card.trailerLink,
+      "https://api.nomoreparties.co" + card.image.formats.thumbnail.url,
+      card.id,
+      card.nameRU,
+      card.nameEN).then((data)=>{
+      console.log(data)
+    }).catch(console.log)
+  }
+
 
   function loadMovies() {
-    setMovieNumber(movieNumber + 3)
+
+    let moviesToLoad=3
+    if (window.innerWidth<1280)
+      moviesToLoad=2
+    if (window.innerWidth<768)
+      moviesToLoad=1
+    setMovieNumber(movieNumber + moviesToLoad)
   }
 
   function closeAllPopups() {
@@ -190,11 +225,13 @@ function App() {
                           movies={moviesForView}
                           setMovieName={setMovieName}
                           moreCallback={loadMovies}
+                          onSaveClick={handleSaveClick}
           />
           <ProtectedRoute exact path="/saved-movies" isLoggedIn={loggedIn} component={SavedMovies}
                           handleNavClick={handleNavClick}
                           isNavPopupOpen={isNavPopupOpen}
                           closeAllPopups={closeAllPopups}
+
           />
 
           <ProtectedRoute exact path="/profile" isLoggedIn={loggedIn} component={Profile}

@@ -43,8 +43,8 @@ function RedactProfilePopup(props) {
         <span id="error-name" className="error-message error-message_visible"/>
         <input onChange={handleChangeEmail} value={email || ''} placeholder="Введите email" id="email"
                name="input-email" type="text"
-               className="popup__input popup__input_type_job" minLength={2} maxLength={200} required/>
-        <span id="error-job" className="error-message error-message_visible"/>
+               className="popup__input popup__input_type_email" minLength={2} maxLength={200} required/>
+        <span id="error-email" className="error-message error-message_visible"/>
 
       </form>
     </PopupWithForm>

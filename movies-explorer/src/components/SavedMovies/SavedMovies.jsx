@@ -8,41 +8,8 @@ import aclogo from "../../images/ac-logo.svg";
 import MoviesCard from "../MoviesCard/MoviesCard";
 import Navigation from "../Navigation/Navigation";
 
-const cards = [
-  {
-    _id: "ncekwn2vkwkvw",
-    name: "В погоне за Бенгси2",
-    time: "27 минут",
-    image: "https://static.kinoafisha.info/k/movie_shots/canvas/290x160/upload/movie_shots/4/0/9/8360904/6754de12bc0c02f080dfe209fa554f17.jpg.webp",
-    state: "false",
-  },
-
-  {
-    _id: "ncekwn2vkwkvw",
-    name: "В погоне за Бенгси2",
-    time: "27 минут",
-    image: "https://static.kinoafisha.info/k/movie_shots/canvas/290x160/upload/movie_shots/4/0/9/8360904/6754de12bc0c02f080dfe209fa554f17.jpg.webp",
-    state: "false",
-  },
-  {
-    _id: "ncekwnvkwkvw1",
-    name: "В погоне за Бенгси",
-    time: "27 минут",
-    image: "https://static.kinoafisha.info/k/movie_shots/1920x1080/upload/movie_shots/4/0/9/8360904/20dfe7731100094eda4ad9dee204eb2b.jpeg",
-    state: "false",
-  },
-  {
-    _id: "ncekwnvkwkvw3",
-    name: "В погоне за Бенгси3",
-    time: "27 минут",
-    image: "https://avatars.mds.yandex.net/get-kinopoisk-image/1898899/1e28d109-7de8-4c23-abb6-d5056e690898/300x450",
-    state: "false",
-  },
-
-
-]
-
 function SavedMovies(props) {
+
 
   return (
     <div className="movies">
@@ -68,8 +35,8 @@ function SavedMovies(props) {
         <Navigation isOpen={props.isNavPopupOpen} onClose={props.closeAllPopups}/>
         <SearchForm/>
         <div className="moviesCardList">
-          {cards.map((element) => (
-            <MoviesCard card={element} saved={"true"} key={element._id}></MoviesCard>
+          {props.cardsList.map((element) => (
+            <MoviesCard card={element} saved={"false"} key={element.id} onSaveClick={props.onSaveClick}></MoviesCard>
           ))}
         </div>
       </main>

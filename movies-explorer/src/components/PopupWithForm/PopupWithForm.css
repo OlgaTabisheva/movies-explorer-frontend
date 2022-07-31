@@ -22,6 +22,17 @@
   margin-bottom: 16px;
 
 }
+.popup__button-red_disabled {
+  background-color: white;
+  cursor: default;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #000000;
+  opacity: 0.2;
+}
+
+
 
 .popup__button-red:hover {
   opacity: 50%;

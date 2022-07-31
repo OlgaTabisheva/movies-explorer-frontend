@@ -13,7 +13,6 @@ class MainApi {
 
   }
 
-
   editProfile(name, email) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
@@ -39,7 +38,46 @@ class MainApi {
       'Content-Type': 'application/json'
     };
   }
+
+  saveMovie(country, director, duration, year, description, image, trailerLink, thumbnail, movieId, nameRU, nameEN){
+    return fetch(`${this._baseUrl}/movies`, {
+      method: "POST",
+      headers: this._headers,
+      body: JSON.stringify({
+        country,
+        director,
+        duration,
+        year,
+        description,
+        image,
+        trailerLink,
+        thumbnail,
+        movieId,
+        nameRU,
+        nameEN
+
+      })
+    })
+      .then(res => this._getResponseData(res))
+  }
+
+  getMovies(){
+    return fetch(`${this._baseUrl}/movies`, {
+      headers: this._headers
+    })
+      .then(res => this._getResponseData(res))
+  }
+  deleteMovie (id) {
+    return fetch(`${this._baseUrl}/movies/${id}`, {
+      method: "DELETE",
+      headers: this._headers,
+    })
+      .then(res => this._getResponseData(res))
+
+  }
+
 }
+
 
 export const mainApi = new MainApi({
   baseUrl: 'http://localhost:3001',

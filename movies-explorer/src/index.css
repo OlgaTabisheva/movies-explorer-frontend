@@ -32,6 +32,7 @@ code {
 @import url(./components/SavedMovies/SavedMovies.css);
 @import url(./components/RedactProfilePopup/RedactProfilePopup.css);
 @import url(./components/PopupWithForm/PopupWithForm.css);
+@import url(./components/Preloader/Preloader.css);
 
 
 
