@@ -80,7 +80,7 @@ class MainApi {
 
 
 export const mainApi = new MainApi({
-  baseUrl: 'http://localhost:3001',
+  baseUrl: 'https://movies.diploma-taolia.nomoredomains.xyz',
   headers: {
     authorization: `Bearer ${localStorage.getItem('JWT')}`,
     'Content-Type': 'application/json'

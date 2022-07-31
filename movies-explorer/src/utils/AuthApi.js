@@ -53,6 +53,6 @@ class AuthApi {
 }
 
 export const authApi = new AuthApi({
-  baseUrl: 'http://localhost:3001',
+  baseUrl: 'https://movies.diploma-taolia.nomoredomains.xyz',
 });
 
