@@ -28,6 +28,7 @@ function App() {
   const [movieNumber, setMovieNumber] = useState(0);
   const [searchPressed, setSearchPressed] = React.useState(false)
   const [saveSearchPressed, setSaveSearchPressed] = React.useState(false)
+  const [preloaderShown, setPreloaderShown ] = React.useState(false);
 
   const [movies, setMovies] = React.useState([]) // карточки с стороннего сервера
   const [moviesForView, setMoviesForView] = React.useState([]) // отображаемые карточки
@@ -124,6 +125,8 @@ function App() {
   }, [loggedIn]);
 
   function searchCallback(small) {
+    setPreloaderShown(true)
+
     let res = searchMovies(movieName, movies, small);
     res = res.map((element)=> {
       if (!element.image.url.startsWith(baseServerUrl))
@@ -136,6 +139,8 @@ function App() {
   }
 
   function searchSavedCallback(small) {
+    setPreloaderShown(true)
+
     let res = searchMovies(movieName, savedMovies, small);
     setFoundSavedMovies(res)
   }
@@ -144,6 +149,7 @@ function App() {
   function showNMovies(srcMovies) {
     const n = movieNumber >= srcMovies.length ? srcMovies.length : movieNumber
     setMoviesForView(srcMovies.slice(0, n));
+    setPreloaderShown(false)
   }
 
   function handleUpdateUser(newInfo) {
@@ -279,6 +285,8 @@ function App() {
                           moreCallback={loadMovies}
                           onSaveClick={handleSaveClick}
                           savedMoviesIds={savedMoviesIds}
+                          preloaderShown={preloaderShown}
+                          setPreloaderShown={setPreloaderShown}
           />
           <ProtectedRoute exact path="/saved-movies" isLoggedIn={loggedIn} component={SavedMovies}
                           handleNavClick={handleNavClick}
@@ -290,6 +298,8 @@ function App() {
                           setMovieName={setMovieName}
                           moreCallback={loadMovies}
                           onSaveClick={handleDeleteClick}
+                          preloaderShown={preloaderShown}
+                          setPreloaderShown={setPreloaderShown}
 
           />
 
