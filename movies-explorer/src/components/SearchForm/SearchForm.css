@@ -5,9 +5,12 @@
   font-size: 25px;
   line-height: 30px;
   font-weight: 400;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid #424242;
   margin-bottom: 70px;
   margin-top: 70px;
+  max-width: 1280px;
+  display: flex;
+  justify-content: center;
 }
 
 .search__section2 {
@@ -126,14 +129,19 @@
 
 
 @media screen and (max-width: 1279px) {
+  .search{
+    max-width: 708px;
+    justify-content: flex-start
+  }
+
 
 }
 
 @media screen and (max-width: 930px) {
   .search {
     width: 320px;
-    display: flex;
     margin-bottom: 40px;
+    justify-content: center
   }
 
   .search__film-box {

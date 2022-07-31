@@ -17,7 +17,7 @@ function MoviesCard(props) {
     <div className="movies__card">
       <div className="movies__head">
         <div className="movies__name">{props.card.nameRU}</div>
-        <div className="movies__time">{props.card.duration}</div>
+        <div className="movies__time">{props.card.duration} минут</div>
       </div>
       <Link target="_blank" to={{ pathname:props.card.trailerLink}}>
       <img src={props.card.image.url ? props.card.image.url : props.card.image}  alt="Картинка фильма"

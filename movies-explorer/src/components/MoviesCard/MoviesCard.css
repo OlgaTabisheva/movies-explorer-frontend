@@ -32,7 +32,6 @@
 .movies__name {
   width: 240px;
   margin-right: 14px;
-
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
@@ -61,7 +60,14 @@
   background: #313131 url('../../images/delete_save.svg');
   background-repeat: no-repeat;
 }
+.movies__time{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: #8B8B8B;
 
+}
 @media screen and (max-width: 1279px) {
   .movies__img {
     width: 342px;
@@ -85,6 +91,9 @@
 
   .movies__name {
     width: 200px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
   }
 
   .movies__card {
@@ -97,3 +106,9 @@
     width: 300px;
   }
 }
+.movies__time{
+  font-size: 10px;
+  line-height: 18px;
+
+}
+
