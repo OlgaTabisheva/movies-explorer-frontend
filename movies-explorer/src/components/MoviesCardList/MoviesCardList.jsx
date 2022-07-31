@@ -7,7 +7,13 @@ function MoviesCardList(props) {
   return (
     <div className={MoviesCardListClassName}>
       {props.cardsList.map((element) => (
-        <MoviesCard card={element} saved={"false"} key={element.id} onSaveClick={props.onSaveClick}></MoviesCard>
+        <MoviesCard card={element}
+                    saved={"false"}
+                    key={element.id ? element.id : element.movieId}
+                    fromSaved={props.fromSaved}
+                    onSaveClick={props.onSaveClick}
+                    savedMoviesIds={props.savedMoviesIds}
+        > </MoviesCard>
       ))}
     </div>
 

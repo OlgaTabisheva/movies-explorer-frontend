@@ -8,12 +8,13 @@ function SearchForm(props) {
 
   function search(e) {
     e.preventDefault()
-    props.searchCallback()
+    props.searchCallback(small)
   }
 
   function handleChangeName(e) {
     props.setMovieName(e.target.value);
   }
+
 
 
   return (

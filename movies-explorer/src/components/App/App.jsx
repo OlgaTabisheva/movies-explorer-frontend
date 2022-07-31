@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {Redirect, Route, Switch, useHistory} from 'react-router-dom'
+import React, {useEffect, useLayoutEffect, useState} from 'react';
+import {Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom'
 import './App.css';
 import '../../index.css';
 import Main from "../Main/Main";
@@ -26,12 +26,20 @@ function App() {
   const [userData, setUserData] = useState(null);
   const [movieName, setMovieName] = useState("");
   const [movieNumber, setMovieNumber] = useState(0);
-  const [movies, setMovies] = React.useState([]) // карточки с стороннего сервера
   const [searchPressed, setSearchPressed] = React.useState(false)
+  const [saveSearchPressed, setSaveSearchPressed] = React.useState(false)
+
+  const [movies, setMovies] = React.useState([]) // карточки с стороннего сервера
   const [moviesForView, setMoviesForView] = React.useState([]) // отображаемые карточки
   const [foundMovies, setFoundMovies] = React.useState([]) // карточки по условию поиска
-  const history = useHistory()
+  const [savedMovies, setSavedMovies] = React.useState([]) // сохраненные карточки
+  const [foundSavedMovies, setFoundSavedMovies] = React.useState([]) // сохраненные карточки
 
+  const [savedMoviesIds, setSavedMoviesIds] = React.useState([])
+
+
+  const baseServerUrl = "https://api.nomoreparties.co";
+  const history = useHistory()
 
   React.useEffect(() => {
     if (!loggedIn)
@@ -45,8 +53,7 @@ function App() {
 
   useEffect(() => {
     tokenCheck();
-
-    if (movieNumber == 0) {
+    if (movieNumber === 0) {
       if (window.innerWidth >= 1280)
         setMovieNumber(12)
       else if (window.innerWidth < 1279)
@@ -61,17 +68,25 @@ function App() {
   useEffect(() => {
     if (foundMovies.length !== 0) {
 
-      showNMovies();
+      showNMovies(foundMovies);
       setSearchPressed(true)
     }
   }, [foundMovies]);
 
   useEffect(() => {
-    showNMovies();
+    if (foundSavedMovies.length !== 0) {
+
+      showNMovies(foundSavedMovies);
+      setSaveSearchPressed(true)
+    }
+  }, [foundSavedMovies]);
+
+  useEffect(() => {
+    showNMovies(foundMovies);
   }, [movieNumber]);
 
   useEffect(() => {
-    if (movies.length != 0)
+    if (movies.length !== 0)
       return;
     Promise.all([moviesApi.getInitialMovies()])
       .then(([newMovies]) => {
@@ -79,6 +94,24 @@ function App() {
       }).catch(err => console.log(err))
 
   }, []);
+
+  const location = useLocation();
+
+  useLayoutEffect(() => {
+    setFoundSavedMovies([])
+    setMoviesForView([])
+    setSaveSearchPressed(false)
+    setSearchPressed(false)
+    Promise.all([mainApi.getMovies()])
+      .then(([newMovies]) => {
+        setSavedMovies(newMovies)
+      }).catch(err => console.log(err))
+  }, [location]);
+
+  useEffect(() => {
+    const res = savedMovies.map(item=> item.movieId)
+    setSavedMoviesIds(res)
+  }, [savedMovies]);
 
 
   useEffect(() => {
@@ -90,13 +123,27 @@ function App() {
     history.push('/signin');
   }, [loggedIn]);
 
-  function searchCallback() {
-    setFoundMovies(searchMovies(movieName, movies));
+  function searchCallback(small) {
+    let res = searchMovies(movieName, movies, small);
+    res = res.map((element)=> {
+      if (!element.image.url.startsWith(baseServerUrl))
+        element.image.url=baseServerUrl + element.image.url
+      if (!element.image.formats.thumbnail.url.startsWith(baseServerUrl))
+        element.image.formats.thumbnail.url = baseServerUrl + element.image.formats.thumbnail.url;
+      return element
+    })
+    setFoundMovies(res)
   }
 
-  function showNMovies() {
-    const n = movieNumber >= foundMovies.length ? foundMovies.length : movieNumber
-    setMoviesForView(foundMovies.slice(0, n));
+  function searchSavedCallback(small) {
+    let res = searchMovies(movieName, savedMovies, small);
+    setFoundSavedMovies(res)
+  }
+
+
+  function showNMovies(srcMovies) {
+    const n = movieNumber >= srcMovies.length ? srcMovies.length : movieNumber
+    setMoviesForView(srcMovies.slice(0, n));
   }
 
   function handleUpdateUser(newInfo) {
@@ -131,20 +178,25 @@ function App() {
     setIsNavPopupOpen(true)
   }
   function handleSaveClick(card) {
- console.log(card)
     mainApi.saveMovie(
       card.country,
       card.director,
       card.duration,
       card.year,
       card.description,
-      "https://api.nomoreparties.co" + card.image.url,
+      card.image.url,
       card.trailerLink,
-      "https://api.nomoreparties.co" + card.image.formats.thumbnail.url,
+      card.image.formats.thumbnail.url,
       card.id,
       card.nameRU,
       card.nameEN).then((data)=>{
-      console.log(data)
+    }).catch(console.log)
+  }
+
+  function handleDeleteClick(card) {
+    mainApi.deleteMovie(
+      card.movieId
+    ).then((data) => {
     }).catch(console.log)
   }
 
@@ -226,11 +278,18 @@ function App() {
                           setMovieName={setMovieName}
                           moreCallback={loadMovies}
                           onSaveClick={handleSaveClick}
+                          savedMoviesIds={savedMoviesIds}
           />
           <ProtectedRoute exact path="/saved-movies" isLoggedIn={loggedIn} component={SavedMovies}
                           handleNavClick={handleNavClick}
                           isNavPopupOpen={isNavPopupOpen}
                           closeAllPopups={closeAllPopups}
+                          searchPressed={saveSearchPressed}
+                          searchCallback={searchSavedCallback}
+                          movies={foundSavedMovies}
+                          setMovieName={setMovieName}
+                          moreCallback={loadMovies}
+                          onSaveClick={handleDeleteClick}
 
           />
 
@@ -258,7 +317,7 @@ function App() {
             <Main/>
           </Route>
           <Route path="*">
-            {loggedIn ? <Redirect to="/profile"/> : <Redirect to="/signin"/>}
+            {loggedIn ? <Redirect to="/movies"/> : <Redirect to="/signin"/>}
           </Route>
         </Switch>
         <Navigation/>

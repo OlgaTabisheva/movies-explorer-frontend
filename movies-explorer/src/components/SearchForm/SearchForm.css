@@ -99,6 +99,7 @@
 }
 
 .search__smalltumb {
+  margin-left: 10px;
   margin-right: 14px;
   background-image: url('../../images/smalltumb_black.svg');
   background-position: center;
