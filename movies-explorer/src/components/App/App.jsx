@@ -301,6 +301,8 @@ function App() {
         mainApi.setToken(res.token);
 
         setIsloggedIn(true)
+
+        history.push('/movies')
       }).catch(console.log)
   }
   const tokenCheck = () => {

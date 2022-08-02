@@ -16,7 +16,7 @@ function Profile(props) {
       props.signOut()
   }
   useEffect(() => {
-    console.log(props.requestOnServer)
+
     if (props.requestOnServer===2) // успех
     {
       setTimeout(() => { props.setRequestOnServer(0); }, 3000);
@@ -54,7 +54,6 @@ function Profile(props) {
         <div className="profile__email">{currentUser.email}</div>
       </div>
       <p className={`profile__redact-save  ${props.requestOnServer===2 ?  'profile__redact-save_active' : ''}`} >Данные пользователя успешно сохранены</p>
-    {/*profile__redact-save_active*/}
       <Link className='profile__redact profile__link' to='/profile' onClick={props.handleRedClick}>Редактировать</Link>
       <Link className='profile__exit' onClick={logOut} to='/'>Выйти из аккаунта</Link>
       <Navigation isOpen={props.isNavPopupOpen} onClose={props.closeAllPopups}/>

@@ -1,32 +1,49 @@
-import React, {useEffect} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import {currentUserContext} from "../../context/CurrentUserContext";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
 function RedactProfilePopup(props) {
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
   const [dataChanged, setDataChanged] = React.useState(false);
   const currentUser = React.useContext(currentUserContext)
 
-  React.useEffect(() => {
-    setName(currentUser.name);
-    setEmail(currentUser.email);
+  const [formValues, setformValues] = React.useState({
+    nameInput: currentUser.name,
+    emailInput: currentUser.email,
 
-  }, [currentUser, props.isOpen]);
+  });
+  const [formValidity, setformValidity] = React.useState({
+    nameInputValid: false,
+    emailInputValid: false,
 
-  function handleChangeName(e) {
-    if (e.target.value!==name)
-      setDataChanged(true)
-    setName(e.target.value);
-  }
+  });
 
-  function handleChangeEmail(e) {
-    if (e.target.value!==email)
-      setDataChanged(true)
-    setEmail(e.target.value);
-  }
+  const handleInputChange = useCallback((e)=> {
+    const {name, value} = e.target;
+    setformValues(prevState => ({...prevState, [name]: value}));
+  },[setformValues])
 
 
+  useEffect( function validateInputs(){
+    const isNameInputFilled = formValues.nameInput.length > 2
+    const isNameInputValid = isNameInputFilled
+    const re = /\S+@\S+\.\S+/;
+    const isEmailInputFilled = formValues.emailInput.length > 4
+    const isEmail = re.test(formValues.emailInput )
+    const isEmailInputValid = isEmailInputFilled && isEmail
+    setDataChanged(formValues.nameInput !== currentUser.name && formValues.emailInput !== currentUser.email)
+
+
+    setformValidity(prevValidity=>({
+      nameInputValid: isNameInputValid,
+      emailInputValid: isEmailInputValid,
+
+    }))
+
+  }, [formValues, setformValues])
+
+  const {nameInput, emailInput} = formValues
+  const {nameInputValid, emailInputValid} = formValidity
+  const isSubmitDisabled = !nameInputValid || !emailInputValid ;
 
   function handleSubmit(e) {
     props.setRequestOnServer(1)
@@ -34,27 +51,26 @@ function RedactProfilePopup(props) {
     e.preventDefault();
     // Передаём значения управляемых компонентов во внешний обработчик
     props.onUpdateUser({
-      name,
-      email: email,
+      name: nameInput,
+      email: emailInput,
     });
   }
 
   return (
     <PopupWithForm className="Edit" name='edit' isOpen={props.isOpen}
                    onClose={props.onClose}
-                   disableButton={!dataChanged}
+                   disableButton={!dataChanged && !isSubmitDisabled}
                    onSubmit={handleSubmit}
                    buttonText="Coxранить">
       <form id="form__input" name="profileInputForm" className="popup__form">
         <h2 className="popup__title">Привет, {currentUser.name}!</h2>
-        <input onChange={handleChangeName} value={name || ''} placeholder="Введите имя пользователя" id="name"
-               name="input-name" type="text"
+        {!nameInputValid && <span className="popup__valid">Поле имени некорректно</span>}
+        <input value={nameInput} onChange={handleInputChange} placeholder="Введите имя пользователя" id="name"
+               name="nameInput" type="text"
                className="popup__input popup__input_type_name" minLength={2} maxLength={40} required/>
-        <span id="error-name" className="error-message error-message_visible"/>
-        <input onChange={handleChangeEmail} value={email || ''} placeholder="Введите email" id="email"
-               name="input-email" type="text"
-               className="popup__input popup__input_type_email" minLength={2} maxLength={200} required/>
-        <span id="error-email" className="error-message error-message_visible"/>
+        {!emailInputValid && <span className="popup__valid">Поле почты некорректно</span>}
+        <input value={emailInput} onChange={handleInputChange}  placeholder="Введите email" id="email"
+               name="emailInput" type="text" className="popup__input popup__input_type_email" minLength={2} maxLength={200} required/>
 
       </form>
     </PopupWithForm>

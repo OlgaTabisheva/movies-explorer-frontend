@@ -125,6 +125,14 @@
   transition: all 1s ease-out;
 }
 
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
 @media screen and (max-width: 1279px) {
   .popup__form {
     margin: 25px 22px 0px 25px;
