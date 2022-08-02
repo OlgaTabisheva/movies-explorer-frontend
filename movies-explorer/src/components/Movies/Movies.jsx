@@ -13,7 +13,7 @@ function Movies(props) {
 
   useEffect(() => {
     const mov = JSON.parse(localStorage.getItem("movies"))
-    if (mov.length===0)
+    if (!mov || mov.length===0)
       return;
     props.setMovies(mov)
     props.setMovieName(JSON.parse(localStorage.getItem("movieName")))
