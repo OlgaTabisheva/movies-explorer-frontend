@@ -138,11 +138,6 @@ function App() {
   }, [savedMovies]);
 
   useEffect(() => {
-    console.log(loggedIn)
-  }, [loggedIn]);
-
-
-  useEffect(() => {
     if (!tokenChecked)
       return;
     if (loggedIn) {

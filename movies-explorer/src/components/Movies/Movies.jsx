@@ -13,8 +13,9 @@ function Movies(props) {
 
   useEffect(() => {
     const mov = JSON.parse(localStorage.getItem("movies"))
-    if (mov)
-      props.setMovies(mov)
+    if (mov.length===0)
+      return;
+    props.setMovies(mov)
     props.setMovieName(JSON.parse(localStorage.getItem("movieName")))
     props.setOnlyShot(JSON.parse(localStorage.getItem("isShot")))
     props.setSavedMoviesIds(JSON.parse(localStorage.getItem("saved")))
