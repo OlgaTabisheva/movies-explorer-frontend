@@ -33,11 +33,11 @@ function SavedMovies(props) {
       </div>
       <main>
         <Navigation isOpen={props.isNavPopupOpen} onClose={props.closeAllPopups}/>
-        <SearchForm searchCallback={props.searchCallback} setMovieName={props.setMovieName}/>
+        <SearchForm searchCallback={props.searchCallback} setMovieName={props.setMovieName} onlyShot={props.onlyShot} setOnlyShot={props.setOnlyShot}/>
         <Preloader isActive={props.preloaderShown}/>
         <MoviesCardList cardsList={props.movies} isVisible={props.searchPressed} onSaveClick={props.onSaveClick} fromSaved={true}/>
-        <p  className={`profile__none ${!props.searchPressed ? 'profile__none_active' : ''}`} > Ничего не найдено</p>
-        <button type="button" className={`profile__button ${props.searchPressed ? 'profile__button_active' : ''}`}  onClick={props.moreCallback}>Еще</button>
+        <p  className={`profile__none ${ props.movies.length===0 ? 'profile__none_active' : ''}`} > Ничего не найдено</p>
+        <button type="button" className={`profile__button ${props.searchPressed && ( props.moviesCount>= props.movies.length  + props.movieNumber) ? 'profile__button_active' : ''}`}  onClick={props.moreCallback}>Еще</button>
       </main>
       <Footer/>
     </div>

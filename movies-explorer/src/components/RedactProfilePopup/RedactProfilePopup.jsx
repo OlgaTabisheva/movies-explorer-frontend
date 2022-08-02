@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {currentUserContext} from "../../context/CurrentUserContext";
-import PopupWithForm from "./../PopupWithForm/PopupWithForm";
+import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
 function RedactProfilePopup(props) {
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
+  const [dataChanged, setDataChanged] = React.useState(false);
   const currentUser = React.useContext(currentUserContext)
 
   React.useEffect(() => {
@@ -14,15 +15,21 @@ function RedactProfilePopup(props) {
   }, [currentUser, props.isOpen]);
 
   function handleChangeName(e) {
-
+    if (e.target.value!==name)
+      setDataChanged(true)
     setName(e.target.value);
   }
 
   function handleChangeEmail(e) {
+    if (e.target.value!==email)
+      setDataChanged(true)
     setEmail(e.target.value);
   }
 
+
+
   function handleSubmit(e) {
+    props.setRequestOnServer(1)
     // Запрещаем браузеру переходить по адресу формы
     e.preventDefault();
     // Передаём значения управляемых компонентов во внешний обработчик
@@ -33,7 +40,10 @@ function RedactProfilePopup(props) {
   }
 
   return (
-    <PopupWithForm className="Edit" name='edit' isOpen={props.isOpen} onClose={props.onClose} onSubmit={handleSubmit}
+    <PopupWithForm className="Edit" name='edit' isOpen={props.isOpen}
+                   onClose={props.onClose}
+                   disableButton={!dataChanged}
+                   onSubmit={handleSubmit}
                    buttonText="Coxранить">
       <form id="form__input" name="profileInputForm" className="popup__form">
         <h2 className="popup__title">Привет, {currentUser.name}!</h2>

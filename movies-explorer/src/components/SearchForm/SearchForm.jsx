@@ -4,11 +4,10 @@ import searchImg from "../../images/search.svg";
 import line from "../../images/line.svg";
 
 function SearchForm(props) {
-  const [small, setSmall] = React.useState(false)
 
   function search(e) {
     e.preventDefault()
-    props.searchCallback(small)
+    props.searchCallback()
   }
 
   function handleChangeName(e) {
@@ -23,7 +22,7 @@ function SearchForm(props) {
 
         <div className="search__film-box">
           <img src={searchImg} alt="Изображение поиска" className="movies__search-img"/>
-          <input placeholder="Фильм" id="name" onChange={handleChangeName}
+          <input placeholder={`${props.moveName ? props.moveName : 'Фильм'}`} id="name" onChange={handleChangeName}
                  name="search__film-name" type="text"
                  className="popup__input popup__input_type_name input search__input-form" minLength={2} maxLength={40}
                  required/>
@@ -33,8 +32,8 @@ function SearchForm(props) {
           <button className='search__findDeck' type="submit" onClick={search}>Найти</button>
           <img src={line} alt="Изображение line" className="movies__search-line"/>
           <button type="button" onClick={() => {
-            setSmall(!small)
-          }} className={`search__smalltumb ${small ? 'search__smalltumb_active' : ''}`}>
+            props.setOnlyShot(!props.onlyShot)
+          }} className={`search__smalltumb ${props.onlyShot ? 'search__smalltumb_active' : ''}`}>
           </button>
           <p className='search__find'>Короткометражка</p>
 

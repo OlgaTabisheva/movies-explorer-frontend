@@ -46,7 +46,7 @@ function Register(props) {
                name="input-password" type='password'
                className="input popup__input popup__input_type_password" minLength={2} maxLength={200} required/>
         <span id="error-password" className="error-message error-message_visible"/>
-        <button className="popup__button-save button" type="submit">Зарегистрироваться</button>
+        <button  className="popup__button-save button" type="submit">Зарегистрироваться</button>
         <Link className='register__login' to="/signin">Уже зарегистрированы? Войти</Link>
       </form>
     </div>

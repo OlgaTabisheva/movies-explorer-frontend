@@ -37,7 +37,7 @@ function Login(props) {
                name="input-password" type='password'
                className="popup__input popup__input_type_job input" minLength={2} maxLength={200} required/>
         <span id="error-password" className="error-message error-message_visible"/>
-        <button type="submit" className="popup__button-save button">Войти</button>
+        <button  type="submit" className="popup__button-save button">Войти</button>
         <Link className='register__login' to="/signup">Еще не зарегистрированы? Регистрация</Link>
       </form>
     </div>

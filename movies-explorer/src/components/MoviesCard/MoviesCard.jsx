@@ -11,6 +11,16 @@ function MoviesCard(props) {
     cardSaveButtonText = ""
     cardSaveButtonClassName = (`movies__save ${props.card.state !== "true" ? ' movies__delete-active' : ''}`);
   }
+  function buttonActionCallback(param)
+  {
+    if (props.fromSaved) {
+      return props.onSaveClick(param)
+    }
+    if (cardSaved)
+      return props.onSaveClick(param)
+    else
+      return props.handleDeleteClick(param)
+  }
 
 
   return (
@@ -23,7 +33,7 @@ function MoviesCard(props) {
       <img src={props.card.image.url ? props.card.image.url : props.card.image}  alt="Картинка фильма"
            className="movies__img"/>
       </Link>
-      <button className={cardSaveButtonClassName} onClick={() => props.onSaveClick(props.card)}  >{cardSaveButtonText} </button>
+      <button className={cardSaveButtonClassName} onClick={() => buttonActionCallback(props.card)}  >{cardSaveButtonText} </button>
     </div>
   );
 }

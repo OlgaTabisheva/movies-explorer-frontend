@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Link} from "react-router-dom"
 import logo from "../../images/logo.svg";
 import aclogo from "../../images/ac-logo.svg";
@@ -15,6 +15,16 @@ function Profile(props) {
     if (props.signOut)
       props.signOut()
   }
+  useEffect(() => {
+    console.log(props.requestOnServer)
+    if (props.requestOnServer===2) // успех
+    {
+      setTimeout(() => { props.setRequestOnServer(0); }, 3000);
+    }
+    if (props.requestOnServer===3) // неудача
+      setTimeout(() => { props.setRequestOnServer(0); }, 3000);
+
+  }, [ props.requestOnServer]);
 
   return (
     <nav className="profile">
@@ -43,11 +53,15 @@ function Profile(props) {
         <div className="profile__email-nav">E-mail</div>
         <div className="profile__email">{currentUser.email}</div>
       </div>
+      <p className={`profile__redact-save  ${props.requestOnServer===2 ?  'profile__redact-save_active' : ''}`} >Данные пользователя успешно сохранены</p>
+    {/*profile__redact-save_active*/}
       <Link className='profile__redact profile__link' to='/profile' onClick={props.handleRedClick}>Редактировать</Link>
       <Link className='profile__exit' onClick={logOut} to='/'>Выйти из аккаунта</Link>
       <Navigation isOpen={props.isNavPopupOpen} onClose={props.closeAllPopups}/>
       <RedactProfilePopup isOpen={props.isRedPopupOpen} onClose={props.closeAllPopups}
-                          onUpdateUser={props.handleUpdateUser}/>
+                          setRequestOnServer={props.setRequestOnServer}
+                          onUpdateUser={props.handleUpdateUser}
+                          requestOnServer={props.requestOnServer}/>
     </nav>
   );
 }

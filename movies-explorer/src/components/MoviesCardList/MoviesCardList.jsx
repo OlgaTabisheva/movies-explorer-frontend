@@ -13,6 +13,7 @@ function MoviesCardList(props) {
                     fromSaved={props.fromSaved}
                     onSaveClick={props.onSaveClick}
                     savedMoviesIds={props.savedMoviesIds}
+                    handleDeleteClick={props.handleDeleteClick}
         > </MoviesCard>
       ))}
     </div>
