@@ -5,45 +5,11 @@ import logo from "../../images/logo.svg";
 import {Link} from "react-router-dom";
 import burger from "../../images/burger.svg";
 import aclogo from "../../images/ac-logo.svg";
-import MoviesCard from "../MoviesCard/MoviesCard";
 import Navigation from "../Navigation/Navigation";
-
-const cards = [
-  {
-    _id: "ncekwn2vkwkvw",
-    name: "В погоне за Бенгси2",
-    time: "27 минут",
-    image: "https://static.kinoafisha.info/k/movie_shots/canvas/290x160/upload/movie_shots/4/0/9/8360904/6754de12bc0c02f080dfe209fa554f17.jpg.webp",
-    state: "false",
-  },
-
-  {
-    _id: "ncekwn2vkwkvw",
-    name: "В погоне за Бенгси2",
-    time: "27 минут",
-    image: "https://static.kinoafisha.info/k/movie_shots/canvas/290x160/upload/movie_shots/4/0/9/8360904/6754de12bc0c02f080dfe209fa554f17.jpg.webp",
-    state: "false",
-  },
-  {
-    _id: "ncekwnvkwkvw1",
-    name: "В погоне за Бенгси",
-    time: "27 минут",
-    image: "https://static.kinoafisha.info/k/movie_shots/1920x1080/upload/movie_shots/4/0/9/8360904/20dfe7731100094eda4ad9dee204eb2b.jpeg",
-    state: "false",
-  },
-  {
-    _id: "ncekwnvkwkvw3",
-    name: "В погоне за Бенгси3",
-    time: "27 минут",
-    image: "https://avatars.mds.yandex.net/get-kinopoisk-image/1898899/1e28d109-7de8-4c23-abb6-d5056e690898/300x450",
-    state: "false",
-  },
-
-
-]
+import Preloader from "../Preloader/Preloader";
+import MoviesCardList from "../MoviesCardList/MoviesCardList";
 
 function SavedMovies(props) {
-
   return (
     <div className="movies">
       <div className="profile__head">
@@ -66,12 +32,16 @@ function SavedMovies(props) {
       </div>
       <main>
         <Navigation isOpen={props.isNavPopupOpen} onClose={props.closeAllPopups}/>
-        <SearchForm/>
-        <div className="moviesCardList">
-          {cards.map((element) => (
-            <MoviesCard card={element} saved={"true"} key={element._id}></MoviesCard>
-          ))}
-        </div>
+        <SearchForm searchCallback={props.searchCallback} setMovieName={props.setMovieName} onlyShot={props.onlyShot}
+                    setOnlyShot={props.setOnlyShot}/>
+        <Preloader isActive={props.preloaderShown}/>
+        <MoviesCardList cardsList={props.movies} isVisible={props.searchPressed} onSaveClick={props.onSaveClick}
+                        fromSaved={true}/>
+        <p className={`profile__none ${props.movies.length === 0 ? 'profile__none_active' : ''}`}> Ничего не найдено</p>
+        <button type="button"
+                className={`profile__button ${props.searchPressed && (props.moviesCount >= props.movies.length + props.movieNumber) ? 'profile__button_active' : ''}`}
+                onClick={props.moreCallback}>Еще
+        </button>
       </main>
       <Footer/>
     </div>

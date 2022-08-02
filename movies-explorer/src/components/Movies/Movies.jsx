@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Footer from "../Footer/Footer";
@@ -7,96 +7,32 @@ import {Link} from "react-router-dom";
 import burger from "../../images/burger.svg";
 import aclogo from "../../images/ac-logo.svg";
 import Navigation from "../Navigation/Navigation";
-
-const cards = [
-  {
-    _id: "ncekwnvkwkvw",
-    name: "В погоне за Бенгси",
-    time: "27 минут",
-    image: "https://avatars.mds.yandex.net/get-kinopoisk-image/1898899/1e28d109-7de8-4c23-abb6-d5056e690898/300x450",
-    state: "true",
-  },
-  {
-    _id: "ncekwnvkwkvw1",
-    name: "В погоне за Бенгси",
-    time: "27 минут",
-    image: "https://static.kinoafisha.info/k/movie_shots/1920x1080/upload/movie_shots/4/0/9/8360904/20dfe7731100094eda4ad9dee204eb2b.jpeg",
-    state: "true",
-  },
-  {
-    _id: "ncekwn2vkwkvw",
-    name: "В погоне за Бенгси2",
-    time: "27 минут",
-    image: "https://static.kinoafisha.info/k/movie_shots/canvas/290x160/upload/movie_shots/4/0/9/8360904/6754de12bc0c02f080dfe209fa554f17.jpg.webp",
-    state: "false",
-  },
-  {
-    _id: "ncekwnvkwkvw3",
-    name: "В погоне за Бенгси3",
-    time: "27 минут",
-    image: "https://avatars.mds.yandex.net/get-kinopoisk-image/1898899/1e28d109-7de8-4c23-abb6-d5056e690898/300x450",
-    state: "true",
-  },
-  {
-    _id: "ncekwnvkwkvw",
-    name: "В погоне за Бенгси",
-    time: "27 минут",
-    image: "https://avatars.mds.yandex.net/get-kinopoisk-image/1898899/1e28d109-7de8-4c23-abb6-d5056e690898/300x450",
-    state: "true",
-  },
-  {
-    _id: "ncekwnvkwkvw1",
-    name: "В погоне за Бенгси",
-    time: "27 минут",
-    image: "https://static.kinoafisha.info/k/movie_shots/1920x1080/upload/movie_shots/4/0/9/8360904/20dfe7731100094eda4ad9dee204eb2b.jpeg",
-    state: "true",
-  },
-  {
-    _id: "ncekwn2vkwkvw",
-    name: "В погоне за Бенгси2",
-    time: "27 минут",
-    image: "https://static.kinoafisha.info/k/movie_shots/canvas/290x160/upload/movie_shots/4/0/9/8360904/6754de12bc0c02f080dfe209fa554f17.jpg.webp",
-    state: "false",
-  },
-  {
-    _id: "ncekwnvkwkvw3",
-    name: "В погоне за Бенгси3",
-    time: "27 минут",
-    image: "https://avatars.mds.yandex.net/get-kinopoisk-image/1898899/1e28d109-7de8-4c23-abb6-d5056e690898/300x450",
-    state: "true",
-  },
-  {
-    _id: "ncekwnvkwkvw",
-    name: "В погоне за Бенгси",
-    time: "27 минут",
-    image: "https://avatars.mds.yandex.net/get-kinopoisk-image/1898899/1e28d109-7de8-4c23-abb6-d5056e690898/300x450",
-    state: "true",
-  },
-  {
-    _id: "ncekwnvkwkvw1",
-    name: "В погоне за Бенгси",
-    time: "27 минут",
-    image: "https://static.kinoafisha.info/k/movie_shots/1920x1080/upload/movie_shots/4/0/9/8360904/20dfe7731100094eda4ad9dee204eb2b.jpeg",
-    state: "false",
-  },
-  {
-    _id: "ncekwn2vkwkvw",
-    name: "В погоне за Бенгси2",
-    time: "27 минут",
-    image: "https://static.kinoafisha.info/k/movie_shots/canvas/290x160/upload/movie_shots/4/0/9/8360904/6754de12bc0c02f080dfe209fa554f17.jpg.webp",
-    state: "true",
-  },
-  {
-    _id: "ncekwnvkwkvw3",
-    name: "В погоне за Бенгси3",
-    time: "27 минут",
-    image: "https://avatars.mds.yandex.net/get-kinopoisk-image/1898899/1e28d109-7de8-4c23-abb6-d5056e690898/300x450",
-    state: "false",
-  },
-
-]
+import Preloader from "../Preloader/Preloader";
 
 function Movies(props) {
+
+  useEffect(() => {
+    const mov = JSON.parse(localStorage.getItem("movies"))
+    if (!mov || mov.length===0)
+      return;
+    props.setMovies(mov)
+    props.setMovieName(JSON.parse(localStorage.getItem("movieName")))
+    props.setOnlyShot(JSON.parse(localStorage.getItem("isShot")))
+    props.setSavedMoviesIds(JSON.parse(localStorage.getItem("saved")))
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("movies", JSON.stringify(props.movies))
+  }, [props.movies]);
+  useEffect(() => {
+    localStorage.setItem("movieName", JSON.stringify(props.movieName))
+  }, [props.movieName]);
+  useEffect(() => {
+    localStorage.setItem("isShot", JSON.stringify(props.onlyShot))
+  }, [props.onlyShot]);
+  useEffect(() => {
+    localStorage.setItem("saved", JSON.stringify(props.savedMoviesIds))
+  }, [props.savedMoviesIds]);
 
   return (
     <div className="movies">
@@ -119,9 +55,21 @@ function Movies(props) {
 
       <main>
         <Navigation isOpen={props.isNavPopupOpen} onClose={props.closeAllPopups}/>
-        <SearchForm/>
-        <MoviesCardList cardsList={cards}/>
-        <button type="button" className="profile__button">Еще</button>
+        <SearchForm searchCallback={props.searchCallback} setMovieName={props.setMovieName} onlyShot={props.onlyShot}
+                    setOnlyShot={props.setOnlyShot} moveName={props.movieName}/>
+        <Preloader isActive={props.preloaderShown}/>
+        <MoviesCardList cardsList={props.movies}
+                        isVisible={props.searchPressed}
+                        onSaveClick={props.onSaveClick}
+                        fromSaved={false}
+                        savedMoviesIds={props.savedMoviesIds}
+                        handleDeleteClick={props.handleDeleteClick}
+        />
+        <p className={`profile__none ${props.movies.length === 0 ? 'profile__none_active' : ''}`}> Ничего не найдено</p>
+        <button type="button"
+                className={`profile__button ${props.searchPressed && (props.moviesCount >= props.movies.length + props.movieNumber) ? 'profile__button_active' : ''}`}
+                onClick={props.moreCallback}>Еще
+        </button>
       </main>
       <Footer/>
     </div>
