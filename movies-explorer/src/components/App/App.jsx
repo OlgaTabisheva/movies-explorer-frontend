@@ -1,5 +1,5 @@
 import React, {useEffect, useLayoutEffect, useState} from 'react';
-import {Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom'
+import {Route, Switch, useHistory, useLocation} from 'react-router-dom'
 import './App.css';
 import '../../index.css';
 import Main from "../Main/Main";
@@ -16,7 +16,6 @@ import {authApi} from "../../utils/AuthApi";
 import ProtectedRoute from "../ProtectedRoute";
 import {moviesApi} from "../../utils/MoviesApi";
 import {searchMovies} from "../../utils/utils";
-
 
 
 function App() {
@@ -37,7 +36,7 @@ function App() {
   const [movieNumber, setMovieNumber] = useState(0);
   const [searchPressed, setSearchPressed] = React.useState(false)
   const [saveSearchPressed, setSaveSearchPressed] = React.useState(false)
-  const [preloaderShown, setPreloaderShown ] = React.useState(false);
+  const [preloaderShown, setPreloaderShown] = React.useState(false);
   const [movies, setMovies] = React.useState([]) // карточки с стороннего сервера
   const [moviesForView, setMoviesForView] = React.useState([]) // отображаемые карточки
   const [moviesForViewSaved, setMoviesForViewSaved] = React.useState([]) // отображаемые карточки
@@ -71,7 +70,7 @@ function App() {
       else if (window.innerWidth < 768)
         setMovieNumber(5)
     }
-    if (moviesToLoad===0) {
+    if (moviesToLoad === 0) {
       let moviesToLoadLocal = 3
       if (window.innerWidth < 1280)
         moviesToLoadLocal = 2
@@ -82,7 +81,7 @@ function App() {
 
   }, []);
 
-  function resetMovieNumber(){
+  function resetMovieNumber() {
     if (window.innerWidth >= 1280)
       setMovieNumber(12)
     else if (window.innerWidth < 1279)
@@ -105,8 +104,7 @@ function App() {
 
       showNMovies(foundSavedMovies, setMoviesForViewSaved);
       setSaveSearchPressed(true)
-    }
-    else
+    } else
       setPreloaderShown(false)
   }, [foundSavedMovies]);
 
@@ -135,12 +133,12 @@ function App() {
   }, [location]);
 
   useEffect(() => {
-    const res = savedMovies.map(item=> item.movieId)
+    const res = savedMovies.map(item => item.movieId)
     setSavedMoviesIds(res)
   }, [savedMovies]);
 
   useEffect(() => {
-      console.log(loggedIn)
+    console.log(loggedIn)
   }, [loggedIn]);
 
 
@@ -150,8 +148,7 @@ function App() {
     if (loggedIn) {
       history.push("/movies");
       return;
-    }
-    else
+    } else
       history.push('/signin');
   }, [loggedIn]);
 
@@ -171,9 +168,9 @@ function App() {
     setMoviesForView([])
     resetMovieNumber()
     let res = searchMovies(movieName, movies, onlyShot);
-    res = res.map((element)=> {
+    res = res.map((element) => {
       if (!element.image.url.startsWith(baseServerUrl))
-        element.image.url=baseServerUrl + element.image.url
+        element.image.url = baseServerUrl + element.image.url
       if (!element.image.formats.thumbnail.url.startsWith(baseServerUrl))
         element.image.formats.thumbnail.url = baseServerUrl + element.image.formats.thumbnail.url;
       return element
@@ -197,13 +194,12 @@ function App() {
   }
 
 
-
   function handleUpdateUser(newInfo) {
     mainApi.editProfile(newInfo.name, newInfo.email).then((newUserInfo) => {
       setСurrentUser(newUserInfo);
       closeAllPopups()
       setRequestOnServer(2)
-    }).catch((err)=>{
+    }).catch((err) => {
       console.log(err)
       setRequestOnServer(3)
     })
@@ -216,6 +212,7 @@ function App() {
   function handleNavClick() {
     setIsNavPopupOpen(true)
   }
+
   function handleSaveClick(card) {
     mainApi.saveMovie(
       card.country,
@@ -228,7 +225,7 @@ function App() {
       card.image.formats.thumbnail.url,
       card.id,
       card.nameRU,
-      card.nameEN).then((data)=>{
+      card.nameEN).then((data) => {
       const joined = savedMoviesIds.concat(card.id);
       setSavedMoviesIds(joined)
 
@@ -250,11 +247,11 @@ function App() {
 
 
   function loadMovies() {
-    let moviesToLoadLocal=3
-    if (window.innerWidth<1280)
-      moviesToLoadLocal=2
-    if (window.innerWidth<768)
-      moviesToLoadLocal=1
+    let moviesToLoadLocal = 3
+    if (window.innerWidth < 1280)
+      moviesToLoadLocal = 2
+    if (window.innerWidth < 768)
+      moviesToLoadLocal = 1
     setMovieNumber(movieNumber + moviesToLoad)
     setMoviesToLoad(moviesToLoadLocal)
   }
@@ -396,7 +393,7 @@ function App() {
 
           />
           <Route path="*">
-            {loggedIn ? <Redirect to="/movies"/> : <Redirect to="/signin"/>}
+            <Error404/>
           </Route>
         </Switch>
         <Navigation/>

@@ -60,7 +60,8 @@
   background: #313131 url('../../images/delete_save.svg');
   background-repeat: no-repeat;
 }
-.movies__time{
+
+.movies__time {
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
@@ -68,6 +69,7 @@
   color: #8B8B8B;
 
 }
+
 @media screen and (max-width: 1279px) {
   .movies__img {
     width: 342px;
@@ -106,7 +108,8 @@
     width: 300px;
   }
 }
-.movies__time{
+
+.movies__time {
   font-size: 10px;
   line-height: 18px;
 

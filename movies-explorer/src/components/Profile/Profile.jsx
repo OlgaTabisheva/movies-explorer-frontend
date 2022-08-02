@@ -15,16 +15,21 @@ function Profile(props) {
     if (props.signOut)
       props.signOut()
   }
+
   useEffect(() => {
 
-    if (props.requestOnServer===2) // успех
+    if (props.requestOnServer === 2) // успех
     {
-      setTimeout(() => { props.setRequestOnServer(0); }, 3000);
+      setTimeout(() => {
+        props.setRequestOnServer(0);
+      }, 3000);
     }
-    if (props.requestOnServer===3) // неудача
-      setTimeout(() => { props.setRequestOnServer(0); }, 3000);
+    if (props.requestOnServer === 3) // неудача
+      setTimeout(() => {
+        props.setRequestOnServer(0);
+      }, 3000);
 
-  }, [ props.requestOnServer]);
+  }, [props.requestOnServer]);
 
   return (
     <nav className="profile">
@@ -53,7 +58,8 @@ function Profile(props) {
         <div className="profile__email-nav">E-mail</div>
         <div className="profile__email">{currentUser.email}</div>
       </div>
-      <p className={`profile__redact-save  ${props.requestOnServer===2 ?  'profile__redact-save_active' : ''}`} >Данные пользователя успешно сохранены</p>
+      <p className={`profile__redact-save  ${props.requestOnServer === 2 ? 'profile__redact-save_active' : ''}`}>Данные
+        пользователя успешно сохранены</p>
       <Link className='profile__redact profile__link' to='/profile' onClick={props.handleRedClick}>Редактировать</Link>
       <Link className='profile__exit' onClick={logOut} to='/'>Выйти из аккаунта</Link>
       <Navigation isOpen={props.isNavPopupOpen} onClose={props.closeAllPopups}/>

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Footer from "../Footer/Footer";
@@ -21,13 +21,17 @@ function Movies(props) {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("movies", JSON.stringify(props.movies))  }, [props.movies]);
+    localStorage.setItem("movies", JSON.stringify(props.movies))
+  }, [props.movies]);
   useEffect(() => {
-    localStorage.setItem("movieName", JSON.stringify(props.movieName))  }, [props.movieName]);
+    localStorage.setItem("movieName", JSON.stringify(props.movieName))
+  }, [props.movieName]);
   useEffect(() => {
-    localStorage.setItem("isShot", JSON.stringify(props.onlyShot))  }, [ props.onlyShot]);
+    localStorage.setItem("isShot", JSON.stringify(props.onlyShot))
+  }, [props.onlyShot]);
   useEffect(() => {
-    localStorage.setItem("saved", JSON.stringify(props.savedMoviesIds))  }, [ props.savedMoviesIds]);
+    localStorage.setItem("saved", JSON.stringify(props.savedMoviesIds))
+  }, [props.savedMoviesIds]);
 
   return (
     <div className="movies">
@@ -50,7 +54,8 @@ function Movies(props) {
 
       <main>
         <Navigation isOpen={props.isNavPopupOpen} onClose={props.closeAllPopups}/>
-        <SearchForm searchCallback={props.searchCallback} setMovieName={props.setMovieName} onlyShot={props.onlyShot} setOnlyShot={props.setOnlyShot} moveName={props.movieName}/>
+        <SearchForm searchCallback={props.searchCallback} setMovieName={props.setMovieName} onlyShot={props.onlyShot}
+                    setOnlyShot={props.setOnlyShot} moveName={props.movieName}/>
         <Preloader isActive={props.preloaderShown}/>
         <MoviesCardList cardsList={props.movies}
                         isVisible={props.searchPressed}
@@ -59,9 +64,12 @@ function Movies(props) {
                         savedMoviesIds={props.savedMoviesIds}
                         handleDeleteClick={props.handleDeleteClick}
         />
-        <p  className={`profile__none ${ props.movies.length===0 ? 'profile__none_active' : ''}`} > Ничего не найдено</p>
-        <button type="button" className={`profile__button ${props.searchPressed && ( props.moviesCount>= props.movies.length  + props.movieNumber) ? 'profile__button_active' : ''}`}  onClick={props.moreCallback}>Еще</button>
-        </main>
+        <p className={`profile__none ${props.movies.length === 0 ? 'profile__none_active' : ''}`}> Ничего не найдено</p>
+        <button type="button"
+                className={`profile__button ${props.searchPressed && (props.moviesCount >= props.movies.length + props.movieNumber) ? 'profile__button_active' : ''}`}
+                onClick={props.moreCallback}>Еще
+        </button>
+      </main>
       <Footer/>
     </div>
   )

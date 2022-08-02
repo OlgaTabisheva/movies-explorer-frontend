@@ -15,7 +15,6 @@ function SearchForm(props) {
   }
 
 
-
   return (
     <div className="search">
       <form className="search__input">

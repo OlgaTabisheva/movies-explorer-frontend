@@ -39,7 +39,7 @@ class MainApi {
     };
   }
 
-  saveMovie(country, director, duration, year, description, image, trailerLink, thumbnail, movieId, nameRU, nameEN){
+  saveMovie(country, director, duration, year, description, image, trailerLink, thumbnail, movieId, nameRU, nameEN) {
     return fetch(`${this._baseUrl}/movies`, {
       method: "POST",
       headers: this._headers,
@@ -61,13 +61,14 @@ class MainApi {
       .then(res => this._getResponseData(res))
   }
 
-  getMovies(){
+  getMovies() {
     return fetch(`${this._baseUrl}/movies`, {
       headers: this._headers
     })
       .then(res => this._getResponseData(res))
   }
-  deleteMovie (id) {
+
+  deleteMovie(id) {
     return fetch(`${this._baseUrl}/movies/${id}`, {
       method: "DELETE",
       headers: this._headers,

@@ -14,29 +14,29 @@ function Login(props) {
     passwordInputValid: false
   });
 
-  const handleInputChange = useCallback((e)=> {
+  const handleInputChange = useCallback((e) => {
     const {name, value} = e.target;
     setformValues(prevState => ({...prevState, [name]: value}));
-  },[setformValues])
+  }, [setformValues])
 
 
-  useEffect( function validateInputs(){
+  useEffect(function validateInputs() {
     const re = /\S+@\S+\.\S+/;
     const isEmailInputFilled = formValues.emailInput.length > 4
-    const isEmail = re.test(formValues.emailInput )
+    const isEmail = re.test(formValues.emailInput)
     const isEmailInputValid = isEmailInputFilled && isEmail
 
     const isPasswordInputFilled = formValues.passwordInput.length >= 3
     const isPasswordInputValid = isPasswordInputFilled
-    setformValidity(prevValidity=>({
+    setformValidity(prevValidity => ({
       emailInputValid: isEmailInputValid,
       passwordInputValid: isPasswordInputValid
     }))
 
   }, [formValues, setformValues])
 
-  const { emailInput, passwordInput} = formValues
-  const { emailInputValid, passwordInputValid} = formValidity
+  const {emailInput, passwordInput} = formValues
+  const {emailInputValid, passwordInputValid} = formValidity
 
 
   const isSubmitDisabled = !emailInputValid || !passwordInputValid;
@@ -55,15 +55,15 @@ function Login(props) {
         <h2 className="popup__title title">Рады видеть!</h2>
         <p className="input-text">E-mail</p>
         {!emailInputValid && <span className="popup__valid">Поле почты некорректно</span>}
-        <input value={emailInput} onChange={handleInputChange}  id="email"
+        <input value={emailInput} onChange={handleInputChange} id="email"
                name="emailInput" type="text"
                className="popup__input popup__input_type_name input"/>
         <p className="input-text">Пароль</p>
         {!passwordInputValid && <span className="popup__valid">Поле пароля некорректно</span>}
         <input value={passwordInput} onChange={handleInputChange} id="password"
                name="passwordInput" type='password'
-               className="popup__input popup__input_type_job input" />
-        <button  disabled={isSubmitDisabled} type="submit" className="popup__button-save button">Войти</button>
+               className="popup__input popup__input_type_job input"/>
+        <button disabled={isSubmitDisabled} type="submit" className="popup__button-save button">Войти</button>
         <Link className='register__login' to="/signup">Еще не зарегистрированы? Регистрация</Link>
       </form>
     </div>

@@ -3,10 +3,12 @@
   padding: 0;
   width: 510px;
 }
-.popup__valid{
+
+.popup__valid {
   color: red;
 }
-.error-message{
+
+.error-message {
   padding: 10px;
   opacity: 0;
   font-family: "Inter", 'Helvetica Neue', Arial, sans-serif;
@@ -17,7 +19,8 @@
   color: red;
   height: 29.04px;
 }
-.error-message_visible{
+
+.error-message_visible {
   opacity: 1;
 
 }
