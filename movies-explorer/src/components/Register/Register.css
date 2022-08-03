@@ -125,12 +125,21 @@
   transition: all 1s ease-out;
 }
 
+
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
 @media screen and (max-width: 1279px) {
   .popup__form {
     margin: 25px 22px 0px 25px;
     width: 396px;
 
   }
+
 
   .logo {
 
@@ -145,10 +154,6 @@
     text-align: center;
   }
 
-  .popup__input {
-    width: 238px;
-
-  }
 
   .popup__button-save {
     width: 396px;
@@ -192,7 +197,7 @@
   .popup__input {
 
     width: 260px;
-
+    height: 36px;
   }
 
   .input-text {

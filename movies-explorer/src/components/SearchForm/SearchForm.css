@@ -5,44 +5,32 @@
   font-size: 25px;
   line-height: 30px;
   font-weight: 400;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid #424242;
   margin-bottom: 70px;
   margin-top: 70px;
+  max-width: 1280px;
+  display: flex;
+  justify-content: center;
 }
-.search__blue{
-  visibility: hidden;
-}
+
 .search__section2 {
 
   display: flex;
   align-items: center;
   background-color: #202020;
 }
-.search__blue2 {
-  background: #4285F4;
-  border-radius: 48px;
-  width: 58.65px;
-  height: 34px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-left: 30px;
-}
-.search__find3{
+
+.search__findDeck {
   font-style: normal;
   font-weight: 500;
   font-size: 11px;
   line-height: 18px;
-  padding: 5px 10px 5px 10px;
+  padding: 5px 0 5px 14px;
   margin-right: 30px;
   text-decoration: none;
   border: none;
   color: #FFFFFF;
-
-}
-
-.search__blue {
-  background: #4285F4;
+  background-color: #4285F4;
   border-radius: 48px;
   width: 58.65px;
   height: 34px;
@@ -50,6 +38,7 @@
   align-items: center;
   justify-content: space-between;
   margin-left: 30px;
+
 }
 
 .search__input {
@@ -68,32 +57,12 @@
   flex-direction: row;
 }
 
-.movies__search-img {
-
-}
-
-.search__film-name {
-
-}
-
 .search__section {
   display: flex;
   align-items: center;
 }
 
-.search__find1 {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 11px;
-  line-height: 18px;
-  padding: 5px 10px 5px 14px;
-  margin-right: 30px;
-  text-decoration: none;
-  border: none;
-  color: #FFFFFF;
-}
-
-.search__find2 {
+.search__findMobile {
   font-style: normal;
   font-weight: 500;
   font-size: 11px;
@@ -103,7 +72,28 @@
   text-decoration: none;
   border: none;
   color: #FFFFFF;
-  background-color: #2F2F2F;
+  background: #4285F4;
+  border-radius: 48px;
+  width: 58.65px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 30px;
+  visibility: hidden;
+}
+
+.search__find {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 18px;
+  padding: 5px 10px 5px 10px;
+  margin-right: 30px;
+  text-decoration: none;
+  border: none;
+  color: #FFFFFF;
+  background-color: inherit;
 }
 
 .movies__search-line {
@@ -112,8 +102,22 @@
 }
 
 .search__smalltumb {
+  margin-left: 10px;
   margin-right: 14px;
+  background-image: url('../../images/smalltumb_black.svg');
+  background-position: center;
+  width: 41px;
+  height: 27px;
+  background-color: inherit;
+  background-repeat: no-repeat;
+  border: none;
+
 }
+
+.search__smalltumb_active {
+  background-image: url('../../images/smalltumb.svg');
+}
+
 
 .search__long {
   font-style: normal;
@@ -125,14 +129,19 @@
 
 
 @media screen and (max-width: 1279px) {
+  .search {
+    max-width: 708px;
+    justify-content: flex-start
+  }
+
 
 }
 
 @media screen and (max-width: 930px) {
   .search {
     width: 320px;
-    display: flex;
     margin-bottom: 40px;
+    justify-content: center
   }
 
   .search__film-box {
@@ -149,8 +158,6 @@
     display: flex;
     flex-direction: column;
     margin-left: 8px;
-
-
   }
 
   .search__section {
@@ -167,22 +174,24 @@
     visibility: collapse;
   }
 
-  .search__find2 {
+  .search__find {
     background-color: #202020;
   }
-  .search__smalltumb{
+
+  .search__smalltumb {
     margin: 0;
   }
-  .search__blue{
-    margin: 16px;
-  }
-  .search__input-form{
+
+  .search__input-form {
     margin: 0;
   }
-  .search__blue2{
+
+  .search__findDeck {
     visibility: hidden;
   }
-  .search__blue{
+
+  .search__findMobile {
     visibility: visible;
+    margin: 16px;
   }
 }

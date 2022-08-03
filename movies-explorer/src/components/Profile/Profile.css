@@ -49,7 +49,7 @@
 
 .profile__prof {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   align-items: center
 }
 
@@ -88,7 +88,7 @@
 }
 
 .profile__redact {
-  margin: 220px 0 16px 0;
+  margin-left: 20px;
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
@@ -102,6 +102,8 @@
   line-height: 16px;
   border: none;
   text-decoration: none;
+  margin-top: 15px;
+  text-align: center;
 }
 
 .profile__exit:visited {
@@ -114,6 +116,19 @@
 
 .profile__prof-mobi {
   visibility: hidden;
+}
+
+.profile__redact-save {
+  margin: 220px 0 16px 0;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  color: #3DDC84;
+  visibility: hidden;
+}
+
+.profile__redact-save_active {
+  visibility: visible;
 }
 
 @media screen and (max-width: 1279px) {
@@ -130,9 +145,11 @@
   }
 
   .profile__head {
-    width: 780px;
+    width: 920px;
     justify-content: space-around;
-    margin: 15px 0 0 0;
+    margin: 15px 5px 5px;
+
+
   }
 
   .header__logo-profile {
@@ -147,9 +164,9 @@
 @media screen and (max-width: 930px) {
 
   .profile__head {
-    width: 320px;
     justify-content: space-around;
-    margin: 15px 0 70px 14px;
+    width: 360px;
+    margin: 15px 5px 0 5px;
   }
 
   .profile__email-box {
@@ -172,7 +189,14 @@
   }
 
   .profile__redact {
-    margin: 379px 0 16px 0;
+    margin: 30px 0 16px 0;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .profile__redact-save {
+    margin: 389px 0 0 0;
     font-weight: 400;
     font-size: 12px;
     line-height: 15px;

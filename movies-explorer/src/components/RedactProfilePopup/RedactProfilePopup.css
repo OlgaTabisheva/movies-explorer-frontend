@@ -1,0 +1,39 @@
+.popup__form {
+  margin: 34px 36px 0px 36px;
+  padding: 0;
+  width: 510px;
+}
+
+.popup__valid {
+  color: red;
+}
+
+.error-message {
+  padding: 10px;
+  opacity: 0;
+  font-family: "Inter", 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  line-height: 14.52px;
+  font-weight: 400;
+  display: block;
+  color: red;
+  height: 29.04px;
+}
+
+.error-message_visible {
+  opacity: 1;
+
+}
+
+@media screen and (max-width: 920px) {
+
+  .popup__form {
+    margin: 25px 22px 0px 25px;
+    width: 238px;
+
+  }
+}
+
+.popup__title {
+  color: #202020;
+}
